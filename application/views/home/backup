@@ -1,0 +1,569 @@
+                <script type="text/javascript">
+                function startAll () {
+                  interval1 = setInterval("calc3()",1);
+                  interval2 = setInterval("calcAtk()",1);
+                  interval3 = setInterval("calcBhp()",1);
+                  interval4 = setInterval("calcLdj()",1);
+                  interval5 = setInterval("calcKbm()",1);
+                  interval6 = setInterval("calcKs()",1);
+                  interval7 = setInterval("calcPp()",1);
+                  interval8 = setInterval("calcSbsd()",1);
+                  interval9 = setInterval("calcBB()",1);
+                  interval10 = setInterval("calcTL()",1);
+                }
+                </script>
+                <script type="text/javascript">
+                  function startCalc3(){
+                    interval = setInterval("calc3()",1);
+                  }
+                  function calc3(){
+                    one = document.entry.bpr1.value;
+                    two = document.entry.bpr2.value; 
+                    document.entry.bpr.value = (one * 1) + (two * 1);
+                  }
+                  function stopCalc3(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcAtk(){
+                    interval = setInterval("calcAtk()",1);
+                  }
+                  function calcAtk(){
+                    one = document.entry.atk1.value;
+                    two = document.entry.atk2.value; 
+                    three = document.entry.atk3.value; 
+                    document.entry.atk.value = (one * 1) + (two * 1)+ (three * 1);
+                  }
+                  function stopCalcAtk(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcBhp(){
+                    interval = setInterval("calcBhp()",1);
+                  }
+                  function calcBhp(){
+                    one = document.entry.bhp1.value;
+                    two = document.entry.bhp2.value; 
+                    document.entry.bhp.value = (one * 1) + (two * 1);
+                  }
+                  function stopCalcBhp(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcLdj(){
+                    interval = setInterval("calcLdj()",1);
+                  }
+                  function calcLdj(){
+                    one = document.entry.ldj1.value;
+                    two = document.entry.ldj2.value; 
+                    document.entry.ldj.value = (one * 1) + (two * 1);
+                  }
+                  function stopCalcLdj(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcKbm(){
+                    interval = setInterval("calcKbm()",1);
+                  }
+                  function calcKbm(){
+                    one = document.entry.kbm1.value;
+                    two = document.entry.kbm2.value; 
+                    three = document.entry.kbm3.value;
+                    four = document.entry.kbm4.value;
+                    five = document.entry.kbm5.value;
+                    six = document.entry.kbm6.value;
+                    seven = document.entry.kbm7.value;
+                    eight = document.entry.kbm8.value;
+                    document.entry.kbm.value = (one * 1) + (two * 1) + (three * 1) + (four * 1) + (five * 1) + (six * 1) + (seven * 1) + (eight * 1);
+                  }
+                  function stopCalcKbm(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcKs(){
+                    interval = setInterval("calcKs()",1);
+                  }
+                  function calcKs(){
+                    one = document.entry.ks1.value;
+                    two = document.entry.ks2.value; 
+                    three = document.entry.ks3.value;
+                    four = document.entry.ks4.value;
+                    five = document.entry.ks5.value;
+                    document.entry.ks.value = (one * 1) + (two * 1) + (three * 1) + (four * 1) + (five * 1);
+                  }
+                  function stopCalcKs(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcPp(){
+                    interval = setInterval("calcPp()",1);
+                  }
+                  function calcPp(){
+                    one = document.entry.pp1.value;
+                    two = document.entry.pp2.value; 
+                    document.entry.pp.value = (one * 1) + (two * 1);
+                  }
+                  function stopCalcPp(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcSbsd(){
+                    interval = setInterval("calcSbsd()",1);
+                  }
+                  function calcSbsd(){
+                    one = document.entry.sbsd1.value;
+                    document.entry.sbsd.value = (one * 1);
+                  }
+                  function stopCalcSbsd(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcBB(){
+                    interval = setInterval("calcBB()",1);
+                  }
+                  function calcBB(){
+                    one = document.entry.sbsd.value;
+                    two = document.entry.pp.value;
+                    three = document.entry.ks.value;
+                    four = document.entry.ldj.value;
+                    five = document.entry.bhp.value;
+                    six = document.entry.atk.value;
+                    seven = document.entry.kbm.value;
+                    document.entry.BB.value = (one * 1)+(two * 1)+(three * 1)+(four * 1)+(five * 1)+(six * 1)+(seven * 1 );
+                  }
+                  function stopCalcBB(){
+                    clearInterval(interval);
+                  }
+                </script>
+                <script type="text/javascript">
+                  function startCalcTL(){
+                    interval = setInterval("calcTL()",1);
+                  }
+                  function calcTL(){
+                    one = document.entry.bp.value;
+                    two = document.entry.BB.value;
+                    three = document.entry.bpr.value;
+                    four = document.entry.bll1.value;
+                    document.entry.total.value = (one * 1)+(two * 1)+(three * 1)+(four * 1);
+                  }
+                  function stopCalcTL(){
+                    clearInterval(interval);
+                  }
+                </script>
+          <h5>Silahkan Isi Formulir dibawah ini</h5>
+          <?php 
+          $data = $this->getdata->getDataBy($this->uri->segment(3).$this->uri->segment(4));
+          $attributes = array('class' => 'form_inline', 'id' => 'myform', 'name' => 'entry');
+          echo form_open('home/entry/'.$this->uri->segment(3).$this->uri->segment(4), $attributes);
+          ?>
+              <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" onClick="startAll();">
+                      1. Belanja Pegawai
+                    </a>
+                  </div>
+                  <div id="collapseOne" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <table class="table">
+                        <tr>
+                          <td><label>1.1 Honorarium Guru dan Tenaga Kependidikan Honorer</label></td>
+                          <td><span class="add-on">Rp. </span><input name="bp" type="text" value="<?php echo $data->bp;?>"  placeholder="something…"></input><span class="add-on">,00</span></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" onClick="startAll();">
+                      2. Belanja Barang
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <table class="table">
+                        <tr>
+                          <td>
+                            <h6>2.1 ATK</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input type=text name="atk" value="" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.1 Alat Tulis Kantor</label></td>
+                          <td><span class="add-on">Rp. </span><input name="atk1" type="text" value="<?php echo $data->atk1;?>" placeholder="something…" onFocus="startCalcAtk();"  onBlur="stopCalcAtk();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.1.1 Papan Data</label></td>
+                          <td><span class="add-on">Rp. </span><input name="atk2" type="text" value="<?php echo $data->atk2;?>" placeholder="something…" onFocus="startCalcAtk();" onBlur="stopCalcAtk();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.1.2 Printer</label></td>
+                          <td><span class="add-on">Rp. </span><input name="atk3" type="text" value="<?php echo $data->atk3;?>" placeholder="something…" onFocus="startCalcAtk();" onBlur="stopCalcAtk();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                         <tr>
+                          <td>
+                            <h6>2.2 Bahan Habis Pakai</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input type=text name="bhp" value="" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.2.1 Buku Tulis, pensil, bahan praktikum</label></td>
+                          <td><span class="add-on">Rp. </span><input name="bhp1" type="text" value="<?php echo $data->bhp1;?>" placeholder="something…" onFocus="startCalcBhp();" onBlur="stopCalcBhp();"></input><span class="add-on"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.2.2 Foto Kopi</label></td>
+                          <td><span class="add-on">Rp. </span><input name="bhp2" type="text" value="<?php echo $data->bhp2;?>" placeholder="something…" onFocus="startCalcBhp();" onBlur="stopCalcBhp();"></input><span class="add-on"></input><span class="add-on">,00</span></td>
+                        </tr>
+                         <tr>
+                          <td>
+                            <h6>2.3 Langganan Daya dan Jasa</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input type=text name="ldj" value="" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.3.1 Langganan Listrik</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ldj1" type="text" value="<?php echo $data->ldj1;?>" placeholder="something…" onFocus="startCalcLdj();" onBlur="stopCalcLdj();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.3.2 Langganan Telepon</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ldj2" type="text" value="<?php echo $data->ldj2;?>" placeholder="something…" onFocus="startCalcLdj();" onBlur="stopCalcLdj();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                         <tr>
+                          <td>
+                            <h6>2.4 Kegiatan Belajar Mengajar</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input type=text name="kbm" value="" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.1 Tes Semester</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm1" type="text" value="<?php echo $data->kbm1;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.1.1 Pengawas</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm2" type="text" value="<?php echo $data->kbm2;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.1.2 Pembuat Soal</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm3" type="text" value="<?php echo $data->kbm3;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.1.3 Percetakan Dokumen</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm4" type="text" value="<?php echo $data->kbm4;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.1.4 Cetak brosur dan spanduk</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm5" type="text" value="<?php echo $data->kbm5;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.2 Ujian AKhir Sekolah</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm6" type="text" value="<?php echo $data->kbm6;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.3 Ulangan Umum Harian</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm7" type="text" value="<?php echo $data->kbm7;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.4.4 Pengadaan Bahan teori /praktek</label></td>
+                          <td><span class="add-on">Rp. </span><input name="kbm8" type="text" value="<?php echo $data->kbm8;?>" placeholder="something…" onFocus="startCalcKbm();" onBlur="stopCalcKbm();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                         <tr>
+                          <td>
+                            <h6>2.5 Kegiatan Kesiswaan</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input type=text name="ks" value="" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.5.1 Kegiatan Osis</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ks1" type="text" value="<?php echo $data->ks1;?>" placeholder="something…" onFocus="startCalcKs();" onBlur="stopCalcKs();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.5.2 Penyelenggaraan Lomba</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ks2" type="text" value="<?php echo $data->ks2;?>" placeholder="something…" onFocus="startCalcKs();" onBlur="stopCalcKs();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.5.3 Kegiatan Pramuka</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ks3" type="text" value="<?php echo $data->ks3;?>" placeholder="something…" onFocus="startCalcKs();" onBlur="stopCalcKs();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.5.4 Pembinaan Keagamaan</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ks4" type="text" value="<?php echo $data->ks4;?>" placeholder="something…" onFocus="startCalcKs();" onBlur="stopCalcKs();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.5.5 Kegiatan Sanggar Belajar</label></td>
+                          <td><span class="add-on">Rp. </span><input name="ks5" type="text" value="<?php echo $data->ks5;?>" placeholder="something…" onFocus="startCalcKs();" onBlur="stopCalcKs();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                         <tr>
+                          <td>
+                            <h6>2.6 Penyelenggaraan Perpustakaan</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input type=text name="pp" value="" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.6.1 Buku Pelajaran Pokok</label></td>
+                          <td><span class="add-on">Rp. </span><input name="pp1" type="text" value="<?php echo $data->pp1;?>" placeholder="something…" onFocus="startCalcPp();" onBlur="stopCalcPp();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>2.6.2 Buku Penunjang</label></td>
+                          <td><span class="add-on">Rp. </span><input name="pp2" type="text" value="<?php echo $data->pp2;?>" placeholder="something…" onFocus="startCalcPp();" onBlur="stopCalcPp();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                         <tr>
+                          <td>
+                            <h6>2.7 Subsidi</h6>
+                          </td>
+                          <td><span class="add-on">Rp. </span><input name="sbsd" type="text" value="" placeholder="something…"disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        <tr>
+                          <td><label>2.7.1 Bantuan Untuk Siswa</label></td>
+                          <td><span class="add-on">Rp. </span><input name="sbsd1" type="text" value="<?php echo $data->sbsd1;?>" placeholder="something…" onFocus="startCalcSbsd();" onBlur="stopCalcSbsd();"><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label><h5>Total »</h5></label></td>
+                          <td><span class="add-on">Rp. </span><input name="BB" type="text" value="" placeholder="something…"  disabled></input><span class="add-on">,00</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                      3. Belanja Pemeliharaan
+                    </a>
+                  </div>
+                  <div id="collapseThree" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <table class="table">
+                        <tr>
+                          <td><label>3.1 Biaya Perawatan ringan</label></td>
+                          <td><span class="add-on">Rp. </span><input type=text name="bpr1" value="<?php echo $data->bpr1;?>" placeholder="something…" onFocus="startCalc3();" onBlur="stopCalc3();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label>3.1.1 Biaya Pembuatan Taman</label></td>
+                          <td><span class="add-on">Rp. </span><input type=text name="bpr2" value="<?php echo $data->bpr2;?>" placeholder="something…" onFocus="startCalc3();" onBlur="stopCalc3();"></input><span class="add-on">,00</span></td>
+                        </tr>
+                        <tr>
+                          <td><label><h5>Total</h5></label></td>
+                          <td><span class="add-on">Rp. </span><input type=text name="bpr" disabled></input><span class="add-on">,00</td>
+                        </tr>
+                        
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                      4. Biaya Lain-lain
+                    </a>
+                  </div>
+                  <div id="collapseFour" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <table class="table">
+                        <tr>
+                          <td><label>4.1 Upah Tukang</label></td>
+                          <td><span class="add-on">Rp. </span><input name="bll1" value="<?php echo $data->bll1;?>"type="text" placeholder="something…"></input><span class="add-on">,00</span></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              <h4><p>Total Semua Pembiayaan  adalah : <span class="add-on">Rp. </span><input type=text name="total" disabled></input><span class="add-on">,00</p></h4>
+              <div class="form">Catatan : <textarea rows="2" name="catatan" ></textarea></div>
+            </table>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          <?=form_close();?>
+
+
+
+
+          <script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Besar persentase Pengeluaran Bulan <?=$this->uri->segment(3);?>'
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Persentase',
+            data: [
+                ['Biaya Belanja Pegawai',   <?=$percent_bp;?>],
+                {
+                    name: 'Biaya Belanja Barang',
+                    y: <?=$percent_bb;?>,
+                    sliced: true,
+                    selected: true
+                },
+                ['Biaya Belanja Pemeliharaan',    <?=$percent_bpr;?>],
+                ['Biaya Belanja Lain-Lain',     <?=$percent_bll;?>],
+            ]
+        }]
+    });
+});
+    </script>
+
+
+    <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+* 
+*/
+class Home extends CI_Controller
+{
+  
+  function __construct()
+  {
+    parent::__construct();
+    $this->load->model('inputdata');
+    $this->load->model('general');
+  }
+
+  public function index()
+  {
+    $data['content'] = "home/index";
+    $this->load->view('template',$data);  
+  }
+
+  public function bulan($bulan)
+  {
+    $data['bulan'] = $bulan;
+    $data['content'] = "home/bulan_index";
+    $this->load->view('template',$data);  
+  }
+
+  public function entrydata($bulan)
+  {
+    $data['bulan'] = $bulan;
+    $data['content'] = "home/entrydata";
+    $this->load->view('template', $data);
+  }
+
+  public function entry($bulan, $tahun)
+  {
+    $link = $bulan
+    $this->inputdata->insert($bulan.$tahun);
+    $this->inputdata->update($bulan.$tahun);
+    $info = "Data tahun ".$tahun." berhasil di tambah";
+        $this->general->informationSuccess($info);
+    redirect('home/bulan/'.$link);
+  }
+
+  public function viewdetail()
+  {
+    $data['content'] = "home/viewdetail";
+    $this->load->view('template', $data); 
+  }
+
+  public function updatedata()
+  {
+    $data['content'] = "home/updatedata";
+    $this->load->view('template', $data);
+  }
+
+  public function update($bulan, $tahun)
+  {
+    $link = $bulan;
+    $this->inputdata->insert($bulan.$tahun);
+    $this->inputdata->update($bulan.$tahun);
+    $info = "Data tahun ".$tahun." berhasil di ubah";
+        $this->general->informationSuccess($info);
+    redirect('home/bulan/'.$link);
+  }
+
+  public function about()
+  {
+    $data['content'] = "home/about";
+    $this->load->view('template', $data);
+  }
+
+  public function printdetail($bulan, $tahun)
+  {
+    // $bulan = substr($id, 0,1);
+    // $tahun = substr($id, 1,4); 
+    $print = $this->general->bulan($bulan);
+    $ini = "Desember";
+    $data = $this->getdata->getDataBy($bulan.$tahun);
+    $this->load->helper('pdf');
+        $this->load->library('cezpdf');
+        prep_pdf();
+
+        $db_data[] = array('no' => '1.1', 'category' => 'Honorarium Guru dan Tenaga Kependidikan Honorer', 'output' => 'Rp. '.$data->bp);
+        $db_data[] = array('no' => '2.1', 'category' => 'Alat Tulis Kantor', 'output' => 'Rp. '.$data->atk1);
+        $db_data[] = array('no' => '2.1.1', 'category' => 'Papan Data', 'output' => 'Rp. '.$data->atk2);
+        $db_data[] = array('no' => '2.1.2', 'category' => 'Printer', 'output' => 'Rp. '.$data->atk3);
+        $db_data[] = array('no' => '2.2.1', 'category' => 'Buku Tulis, pensil, bahan praktikum', 'output' => 'Rp. '.$data->bhp1);
+        $db_data[] = array('no' => '2.2.2', 'category' => 'Foto Kopi', 'output' => 'Rp. '.$data->bhp2);
+        $db_data[] = array('no' => '2.3.1', 'category' => 'Langganan Listrik', 'output' => 'Rp. '.$data->ldj1);
+        $db_data[] = array('no' => '2.3.2', 'category' => 'Langganan Telepon', 'output' => 'Rp. '.$data->ldj2);
+        $db_data[] = array('no' => '2.4.1', 'category' => 'Tes Semester', 'output' => 'Rp. '.$data->kbm1);
+        $db_data[] = array('no' => '2.4.1.1', 'category' => 'Pengawas', 'output' => 'Rp. '.$data->kbm2);
+        $db_data[] = array('no' => '2.4.1.2', 'category' => 'Pembuat Soal', 'output' => 'Rp. '.$data->kbm3);
+        $db_data[] = array('no' => '2.4.1.3', 'category' => 'Percetakan Dokumen', 'output' => 'Rp. '.$data->kbm4);
+        $db_data[] = array('no' => '2.4.1.4', 'category' => 'Cetak brosur dan spanduk', 'output' => 'Rp. '.$data->kbm5);
+        $db_data[] = array('no' => '2.4.2', 'category' => 'Ujian AKhir Sekolah', 'output' => 'Rp. '.$data->kbm6);
+        $db_data[] = array('no' => '2.4.3', 'category' => 'Ulangan Umum Harian', 'output' => 'Rp. '.$data->kbm7);
+        $db_data[] = array('no' => '2.4.4', 'category' => 'Pengadaan Bahan teori /praktek', 'output' => 'Rp. '.$data->kbm8);
+        $db_data[] = array('no' => '2.5.1', 'category' => 'Kegiatan Osis', 'output' => 'Rp. '.$data->ks1);
+        $db_data[] = array('no' => '2.5.2', 'category' => 'Penyelenggaraan Lomba', 'output' => 'Rp. '.$data->ks2);
+        $db_data[] = array('no' => '2.5.3', 'category' => 'Kegiatan Pramuka', 'output' => 'Rp. '.$data->ks3);
+        $db_data[] = array('no' => '2.5.4', 'category' => 'Pembinaan Keagamaan', 'output' => 'Rp. '.$data->ks4);
+        $db_data[] = array('no' => '2.5.5', 'category' => 'Kegiatan Sanggar Belajar', 'output' => 'Rp. '.$data->ks5);
+        $db_data[] = array('no' => '2.6.1', 'category' => 'Buku Pelajaran Pokok', 'output' => 'Rp. '.$data->pp1);
+        $db_data[] = array('no' => '2.6.2', 'category' => 'Buku Penunjang', 'output' => 'Rp. '.$data->pp2);
+        $db_data[] = array('no' => '2.7.1', 'category' => 'Bantuan Untuk Siswa', 'output' => 'Rp. '.$data->sbsd1);
+        $db_data[] = array('no' => '3.1', 'category' => 'Biaya Perawatan ringan', 'output' => 'Rp. '.$data->bpr1);
+        $db_data[] = array('no' => '3.1.1', 'category' => 'Biaya Pembuatan Taman', 'output' => 'Rp. '.$data->bpr2);
+        $db_data[] = array('no' => '4.1', 'category' => 'Upah Tukang', 'output' => 'Rp. '.$data->bll1);
+        $db_data[] = array('no' => '*', 'category' => 'Jumlah Belanja Pegawai', 'output' => 'Rp. '.$data->jml_bp);
+        $db_data[] = array('no' => '*', 'category' => 'Jumlah Belanja Barang', 'output' => 'Rp. '.$data->jml_bb);
+        $db_data[] = array('no' => '*', 'category' => 'Jumlah Belanja Pemeliharaan', 'output' => 'Rp. '.$data->jml_bpr);
+        $db_data[] = array('no' => '*', 'category' => 'Jumlah Belanja Lain-lain', 'output' => 'Rp. '.$data->jml_bll);
+        $db_data[] = array('no' => '**', 'category' => 'Jumlah Total Pengeluaran', 'output' => 'Rp. '.$data->jml_total);
+        
+
+        
+        $col_names = array(
+            'no' => '#',
+            'category' => 'Category',
+            'output' => 'Pengeluaran',
+        );
+        $this->cezpdf->ezTable($db_data,$col_names,'Data Pengeluaran bulan '.$bulan.' tahun '.$tahun,array('width'=>550,'showHeading'=> 0));
+        $this->cezpdf->ezStream();
+        
+  }
+}
+
+
+/* End of file home.php */
+/* Location: ./application/controllers/home.php */
+?>
