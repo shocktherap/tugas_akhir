@@ -48,14 +48,32 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-	
-$db['default']['hostname'] = 'ec2-54-235-113-246.compute-1.amazonaws.com';
-$db['default']['username'] = 'vixbyepcajpwkv';
-$db['default']['password'] = 'M046hT6PRf-1bHWN4nSR6rDfWd';
-$db['default']['database'] = 'db8f05ckmc7kth';
+	// koneksi heroku
+// $db['default']['hostname'] = 'ec2-54-235-113-246.compute-1.amazonaws.com';
+// $db['default']['username'] = 'vixbyepcajpwkv';
+// $db['default']['password'] = 'M046hT6PRf-1bHWN4nSR6rDfWd';
+// $db['default']['database'] = 'db8f05ckmc7kth';
+// $db['default']['dbdriver'] = 'postgre';
+
+// koneksi postgre
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'izqil';
+$db['default']['password'] = 'izqil';
+$db['default']['database'] = 'tugas_akhir';
 $db['default']['dbdriver'] = 'postgre';
-$db['default']['dbprefix'] = '';
+
 $db['default']['port'] = 5432;
+
+// koneksi mysql
+// $db['default']['hostname'] = 'localhost';
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = 'kodokloncat';
+// $db['default']['database'] = 'tugas_akhir';
+// $db['default']['dbdriver'] = 'mysql';
+
+
+$db['default']['dbprefix'] = '';
+
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;

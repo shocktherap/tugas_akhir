@@ -1,6 +1,6 @@
 <section id="Help">
           <div class="page-header">
-            <h1>Bantuan</h1>
+            <h1>Bantu aku</h1>
           </div>
 
           <h4>Tampilan Login</h4>

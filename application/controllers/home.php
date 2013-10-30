@@ -150,6 +150,19 @@ class Home extends CI_Controller
 		$this->load->view('template', $data);
 	}
 
+	public function update($bulan, $tahun)
+	{
+		$this->general->checksess();
+		$this->general->checkbulantahun($bulan, $tahun);
+		$id = $bulan.$tahun;		
+		$this->inputdata->insertdetaildatakeuangan($id);
+		$this->inputdata->update($id);
+		$namabulan = $this->getdata->getnamabulan($bulan);
+		$info = "Data Bulan ".$namabulan->nama_bulan." tahun ".$tahun." berhasil di update";
+        $this->general->informationSuccess($info);
+		redirect('home/bulan/'.$bulan);		
+	}
+
 	public function cleardata($bulan, $tahun)
 	{
 		$id = $bulan.$tahun;
@@ -163,19 +176,6 @@ class Home extends CI_Controller
 		$info = "Data bulan ".$namabulan->nama_bulan." tahun ".$tahun." berhasil di hapus";
         $this->general->informationSuccess($info);
 		redirect('home/bulan/'.$bulan);
-	}
-
-	public function update($bulan, $tahun)
-	{
-		$this->general->checksess();
-		$this->general->checkbulantahun($bulan, $tahun);
-		$id = $bulan.$tahun;		
-		$this->inputdata->insertdetaildatakeuangan($id);
-		$this->inputdata->update($id);
-		$namabulan = $this->getdata->getnamabulan($bulan);
-		$info = "Data Bulan ".$namabulan->nama_bulan." tahun ".$tahun." berhasil di tambah";
-        $this->general->informationSuccess($info);
-		redirect('home/bulan/'.$bulan);		
 	}
 
 	public function sistem($bulan,$tahun)
