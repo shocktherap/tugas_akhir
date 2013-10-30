@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 	
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'izqil';
-$db['default']['password'] = 'izqil';
-$db['default']['database'] = 'tugas_akhir';
+$db['default']['hostname'] = 'ec2-54-235-113-246.compute-1.amazonaws.com';
+$db['default']['username'] = 'db8f05ckmc7kth';
+$db['default']['password'] = 'M046hT6PRf-1bHWN4nSR6rDfWd';
+$db['default']['database'] = 'vixbyepcajpwkv';
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['port'] = 5432;
