@@ -199,4 +199,9 @@ $(function () {
               }
             ?>
             </br>Terakhir diubah <?=$persetujuan->rencana_last_update_at;?>
-            oleh <?=$persetujuan->rencana_last_update_by;?>
+            oleh <?php $nama = $this->getdata->getnamauser($data_keuangan->last_update_by);
+            if ($nama == 1){
+              echo "Bendahara";
+            } else {
+              echo "Kepala Sekolah";
+            }?>

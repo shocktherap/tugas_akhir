@@ -56,20 +56,20 @@ $active_record = TRUE;
 // $db['default']['dbdriver'] = 'postgre';
 
 // koneksi postgre
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'izqil';
-$db['default']['password'] = 'izqil';
-$db['default']['database'] = 'tugas_akhir';
-$db['default']['dbdriver'] = 'postgre';
+// $db['default']['hostname'] = 'localhost';
+// $db['default']['username'] = 'izqil';
+// $db['default']['password'] = 'izqil';
+// $db['default']['database'] = 'tugas_akhir';
+// $db['default']['dbdriver'] = 'postgre';
 
-$db['default']['port'] = 5432;
+// $db['default']['port'] = 5432;
 
 // koneksi mysql
-// $db['default']['hostname'] = 'localhost';
-// $db['default']['username'] = 'root';
-// $db['default']['password'] = 'kodokloncat';
-// $db['default']['database'] = 'tugas_akhir';
-// $db['default']['dbdriver'] = 'mysql';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'kodokloncat';
+$db['default']['database'] = 'tugas_akhir';
+$db['default']['dbdriver'] = 'mysql';
 
 
 $db['default']['dbprefix'] = '';

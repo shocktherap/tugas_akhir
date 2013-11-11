@@ -100,12 +100,12 @@ class Inputdata extends CI_Model
 
 	public function update($id)
 	{
-		$now = time();
-            $timestamp = $now;
-            $timezone = 'UTC';
-            $daylight_saving = FALSE;
-            $GMY = gmt_to_local($timestamp, $timezone, $daylight_saving);
-            $human = unix_to_human($GMY);
+			$now = time();
+      $timestamp = $now;
+      $timezone = 'UM1';
+      $daylight_saving = FALSE;
+      $GMY = gmt_to_local($timestamp, $timezone, $daylight_saving);
+      $human = unix_to_human($GMY);
 
         $session_data = $this->session->userdata('login');
         if( $session_data['username'] == "user" ){
@@ -143,17 +143,15 @@ class Inputdata extends CI_Model
 		$jumlah_BLL  = $this->input->post('bll1');
 		$jumlah_total = $jumlah_BLL + $jumlah_BPR + $jumlah_BP + $jumlah_BB;
 
-
-		$data = array(	'jml_bp'	=> $jumlah_BP,
+		$data = array('jml_bp'	=> $jumlah_BP,
 						'jml_bb'	=> $jumlah_BB,
 						'jml_bpr'	=> $jumlah_BPR,
 						'jml_bll'	=> $jumlah_BLL,
 						'jml_total'	=> $jumlah_total,
 						'status' => 1,
 						'catatan' =>$this->input->post('catatan'),
-					  	'last_update_at' => $human,
-					  	'last_update_by' => $user
-
+				  	'last_update_at' => $human,
+				  	'last_update_by' => $user
 					  	);
 		$this->db->where('id', $id);
 		$this->db->update('data_keuangan', $data);
@@ -215,15 +213,14 @@ class Inputdata extends CI_Model
 		$session_data = $this->session->userdata('login');
 		$hash = $this->encrypt->sha1($this->input->post('password'));
 		$object = array('password' => $hash);
-        $username = $session_data['username'];
-        $this->db->where('username', $username);
-        $this->db->update('user', $object);
+    $username = $session_data['username'];
+    $this->db->where('username', $username);
+    $this->db->update('user', $object);
 	}
 
 	public function inputhasil($id,$prioritas,$persentase, $id_pengeluaran,$tipe_prioritas,$pengeluaran)
 	{
 		$object = array('prioritas' => $prioritas,'persentase'=> $persentase,'pengeluaran' => $pengeluaran);
-		
 		$this->db->where('id_data_keu', $id);
 		$this->db->where('tipe_prioritas', $tipe_prioritas);
 		$this->db->where('id_pengeluaran', $id_pengeluaran);
@@ -262,7 +259,6 @@ class Inputdata extends CI_Model
 		$this->inputdata->inputrencana1($id,31,$this->input->post('hitung3'),$this->input->post('hasil3'));
 		$this->inputdata->inputrencana1($id,32,$this->input->post('hitung4'),$this->input->post('hasil4'));
 		$this->inputdata->inputrencana1($id,28,$this->input->post('hitung4'),$this->input->post('hasil4'));
-
 		$this->inputdata->inputrencana1($id,33,$this->input->post('hitungtotalbb8'),$this->input->post('hasilhitungtotalbb8'));
 		$this->inputdata->inputrencana1($id,34,$this->input->post('hitungtotalbb9'),$this->input->post('hasilhitungtotalbb9'));
 		$this->inputdata->inputrencana1($id,35,$this->input->post('hitungtotalbb10'),$this->input->post('hasilhitungtotalbb10'));
@@ -271,18 +267,14 @@ class Inputdata extends CI_Model
 		$this->inputdata->inputrencana1($id,38,$this->input->post('hitungtotalbb13'),$this->input->post('hasilhitungtotalbb13'));
 		$this->inputdata->inputrencana1($id,39,$this->input->post('hitungtotalbb14'),$this->input->post('hasilhitungtotalbb14'));
 		$this->inputdata->inputrencana1($id,25,$this->input->post('hitungtotalbb14'),$this->input->post('hasilhitungtotalbb14'));
-
 		$this->inputdata->inputrencana1($id,2,$this->input->post('hitungtotalatk1'),$this->input->post('hasilhitungtotalatk1'));
 		$this->inputdata->inputrencana1($id,3,$this->input->post('hitungtotalatk2'),$this->input->post('hasilhitungtotalatk2'));
 		$this->inputdata->inputrencana1($id,4,$this->input->post('hitungtotalatk3'),$this->input->post('hasilhitungtotalatk3'));
 		$this->inputdata->inputrencana1($id,5,$this->input->post('hitungtotalatk4'),$this->input->post('hasilhitungtotalatk4'));
-
 		$this->inputdata->inputrencana1($id,6,$this->input->post('hitungtotalbhp1'),$this->input->post('hasilhitungtotalbhp1'));
 		$this->inputdata->inputrencana1($id,7,$this->input->post('hitungtotalbhp2'),$this->input->post('hasilhitungtotalbhp2'));
-
 		$this->inputdata->inputrencana1($id,8,$this->input->post('hitungtotalldj1'),$this->input->post('hasilhitungtotalldj1'));
 		$this->inputdata->inputrencana1($id,9,$this->input->post('hitungtotalldj2'),$this->input->post('hasilhitungtotalldj2'));
-
 		$this->inputdata->inputrencana1($id,10,$this->input->post('hitungtotalkbm1'),$this->input->post('hasilhitungtotalkbm1'));
 		$this->inputdata->inputrencana1($id,11,$this->input->post('hitungtotalkbm2'),$this->input->post('hasilhitungtotalkbm2'));
 		$this->inputdata->inputrencana1($id,12,$this->input->post('hitungtotalkbm3'),$this->input->post('hasilhitungtotalkbm3'));
@@ -291,31 +283,32 @@ class Inputdata extends CI_Model
 		$this->inputdata->inputrencana1($id,15,$this->input->post('hitungtotalkbm6'),$this->input->post('hasilhitungtotalkbm6'));
 		$this->inputdata->inputrencana1($id,16,$this->input->post('hitungtotalkbm7'),$this->input->post('hasilhitungtotalkbm7'));
 		$this->inputdata->inputrencana1($id,17,$this->input->post('hitungtotalkbm8'),$this->input->post('hasilhitungtotalkbm8'));
-
 		$this->inputdata->inputrencana1($id,18,$this->input->post('hitungtotalks1'),$this->input->post('hasilhitungtotalks1'));
 		$this->inputdata->inputrencana1($id,19,$this->input->post('hitungtotalks2'),$this->input->post('hasilhitungtotalks2'));
 		$this->inputdata->inputrencana1($id,20,$this->input->post('hitungtotalks3'),$this->input->post('hasilhitungtotalks3'));
 		$this->inputdata->inputrencana1($id,21,$this->input->post('hitungtotalks4'),$this->input->post('hasilhitungtotalks4'));
 		$this->inputdata->inputrencana1($id,22,$this->input->post('hitungtotalks5'),$this->input->post('hasilhitungtotalks5'));
-
 		$this->inputdata->inputrencana1($id,23,$this->input->post('hitungtotalpp1'),$this->input->post('hasilhitungtotalpp1'));
 		$this->inputdata->inputrencana1($id,24,$this->input->post('hitungtotalpp2'),$this->input->post('hasilhitungtotalpp2'));
-
 		$this->inputdata->inputrencana1($id,26,$this->input->post('hitungtotalbpr6'),$this->input->post('hasilhitungtotalbpr6'));
 		$this->inputdata->inputrencana1($id,27,$this->input->post('hitungtotalbpr7'),$this->input->post('hasilhitungtotalbpr7'));
 	}
 
 	public function rencana_last_update($id)
 	{
-			$now = time();
-            $timestamp = $now;
-            $timezone = 'UTC';
-            $daylight_saving = FALSE;
-            $GMY = gmt_to_local($timestamp, $timezone, $daylight_saving);
-            $human = unix_to_human($GMY);
+		$now = time();
+    $timestamp = $now;
+    $timezone = 'UM1';
+    $daylight_saving = FALSE;
+    $GMY = gmt_to_local($timestamp, $timezone, $daylight_saving);
+    $human = unix_to_human($GMY);
 
 		$session_data = $this->session->userdata('login');
-        $user = $session_data['nama'];
+		if( $session_data['username'] == "user" ){
+        	$user = 1;
+        } else {
+        	$user = 2;
+        }
 		$this->db->where('id', $id);
 		$object = array('rencana_last_update_by' => $user,'rencana_last_update_at' => $human);
 		$this->db->update('data_keuangan', $object);
@@ -332,6 +325,13 @@ class Inputdata extends CI_Model
 	{
 		$object = array('id' => $id,'bulan'=>$bulan, 'tahun'=>$tahun );
 		$this->db->insert('data_keuangan', $object);
+	}
+
+	public function inputratio($id, $value)
+	{
+		$object = array('ahp' => $value);
+		$this->db->where('id', $id);
+		$this->db->update('data_keuangan', $object);
 	}
 }
 /* End of file inputdata.php */

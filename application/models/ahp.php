@@ -236,6 +236,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
 
     function subkriteriabpr($id,$pengeluaranbpr)
@@ -349,6 +355,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
 
     public function subkriteriabb($id,$pengeluaranbb)
@@ -748,6 +760,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
     // fix
     public function kriteriapp($id,$pengeluaranpp)
@@ -863,6 +881,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
 
     // fix
@@ -980,6 +1004,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
     // fix
     public function kriterialdj($id,$pengeluaranldj)
@@ -1093,6 +1123,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
 
     // fix
@@ -1296,6 +1332,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
     // fix
     public function kriteriaks($id,$total)
@@ -1557,6 +1599,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
 
     public function kriteriakbm($id,$pengeluarankbm)
@@ -2035,6 +2083,12 @@ class Ahp extends CI_Model
       // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
+      if ($persenrasiokonsistensi <= 10) {
+        $ratio = 0;
+      } else {
+        $ratio = 1;
+        $this->inputdata->inputratio($id_keu, $ratio);
+      }
     }
 }
 

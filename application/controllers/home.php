@@ -189,16 +189,15 @@ class Home extends CI_Controller
         $this->form_validation->set_rules('biaya', 'besar biaya satuan BOS', 'required|numeric');
         $this->form_validation->set_message('required', '%s Harap diisi');
         $this->form_validation->set_message('numeric', '%s Harus angka');
-
         if ($this->form_validation->run() == FALSE) {
         	$data['hasil'] = null;
             $this->load->view('template',$data);
         } else {
-        	$jumlah_siswa = $this->input->post('siswa');
+        	  $jumlah_siswa = $this->input->post('siswa');
             $satuan = $this->input->post('biaya');
             $total  = $jumlah_siswa*$satuan;
-        	$data['hasil'] = array('jumlah' => $total, 'data' => array('pertama' => 'pertama','kedua' => 'kedua'));
-        	$this->ahp->kriteriautama($id,$total);
+        	  $data['hasil'] = array('jumlah' => $total, 'data' => array('pertama' => 'pertama','kedua' => 'kedua'));
+        	  $this->ahp->kriteriautama($id,$total);
             $dataahp2 = $this->getdata->getahp2($id);
             $datakriteria = array();
             foreach ($dataahp2 as $key) {
@@ -207,7 +206,7 @@ class Home extends CI_Controller
             $this->ahp->kriteriaatk($id,$datakriteria[33]);
             $this->ahp->kriteriabhp($id,$datakriteria[34]);
             $this->ahp->kriterialdj($id,$datakriteria[35]);
-			$this->ahp->kriteriakbm($id,$datakriteria[36]);
+			      $this->ahp->kriteriakbm($id,$datakriteria[36]);
             $this->ahp->kriteriaks($id,$datakriteria[37]);
             $this->ahp->kriteriapp($id,$datakriteria[38]);
             $this->load->view('template',$data);

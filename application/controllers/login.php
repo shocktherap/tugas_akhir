@@ -53,7 +53,6 @@ class login extends CI_Controller
 	{
 		$this->load->view('tampil');
 	}
-
 }
 
 /* End of file login.php */
