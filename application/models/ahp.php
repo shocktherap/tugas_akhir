@@ -1,17 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 error_reporting(0);
-/**
-* 
-*/
 class Ahp extends CI_Model
 {
-	
 	function __construct()
 	{
 		parent::__construct();
         $this->load->model('getdata');
 	}
-
 	public function indeksrandom($n)
     {
         if ($n == 2) {
@@ -30,133 +25,96 @@ class Ahp extends CI_Model
             return $ir = 1.41;
         }
     }
-  
-  // Kriteria Utama FIX
   public function kriteriautama($id,$total)
     {
       $id = $id-1;
       $n = 4;
       $id_keu = $id+1;
-      $data_keuangan = $this->getdata->getdatakeuangan($id);
-      // $row = $this->getdata->getDataBy($id);
-
+      $data_keuangan = $this->getdata->getdatakeuangan($id);     
        $datatotal1 = $data_keuangan->jml_bp;
        $datatotal2 = $data_keuangan->jml_bb;
        $datatotal3 = $data_keuangan->jml_bpr;
        $datatotal4 = $data_keuangan->jml_bll;
-
-      // $datatotal1 = $row->jml_bp;
-      // $datatotal2 = $row->jml_bb;
-      // $datatotal3 = $row->jml_bpr;
-      // $datatotal4 = $row->jml_bll;
-
       $data1 = array();
       $data2 = array();
       $data3 = array();
       $data4 = array();
-
-      // pembobotan elemen-elemen pada setiap level dan hierarki
       $data1[] = $datatotal1/$datatotal1;
       $data1[] = $datatotal1/$datatotal2;
       $data1[] = $datatotal1/$datatotal3;
       $data1[] = $datatotal1/$datatotal4;
-
       $data2[] = $datatotal2/$datatotal1;
       $data2[] = $datatotal2/$datatotal2;
       $data2[] = $datatotal2/$datatotal3;
       $data2[] = $datatotal2/$datatotal4;
-
       $data3[] = $datatotal3/$datatotal1;
       $data3[] = $datatotal3/$datatotal2;
       $data3[] = $datatotal3/$datatotal3;
       $data3[] = $datatotal3/$datatotal4;
-
       $data4[] = $datatotal4/$datatotal1;
       $data4[] = $datatotal4/$datatotal2;
       $data4[] = $datatotal4/$datatotal3;
       $data4[] = $datatotal4/$datatotal4;
-
-      // perkalian matriks iterasi pertama
       $data5 = array();
       $data5[] = ($data1[0]*$data1[0])+($data1[1]*$data2[0])+($data1[2]*$data3[0])+($data1[3]*$data4[0]);
       $data5[] = ($data1[0]*$data1[1])+($data1[1]*$data2[1])+($data1[2]*$data3[1])+($data1[3]*$data4[1]);
       $data5[] = ($data1[0]*$data1[2])+($data1[1]*$data2[2])+($data1[2]*$data3[2])+($data1[3]*$data4[2]);
       $data5[] = ($data1[0]*$data1[3])+($data1[1]*$data2[3])+($data1[2]*$data3[3])+($data1[3]*$data4[3]);
-
       $data6 = array();
       $data6[] = ($data2[0]*$data1[0])+($data2[1]*$data2[0])+($data2[2]*$data3[0])+($data2[3]*$data4[0]);
       $data6[] = ($data2[0]*$data1[1])+($data2[1]*$data2[1])+($data2[2]*$data3[1])+($data2[3]*$data4[1]);
       $data6[] = ($data2[0]*$data1[2])+($data2[1]*$data2[2])+($data2[2]*$data3[2])+($data2[3]*$data4[2]);
       $data6[] = ($data2[0]*$data1[3])+($data2[1]*$data2[3])+($data2[2]*$data3[3])+($data2[3]*$data4[3]);
-
       $data7 = array();
       $data7[] = ($data3[0]*$data1[0])+($data3[1]*$data2[0])+($data3[2]*$data3[0])+($data3[3]*$data4[0]);
       $data7[] = ($data3[0]*$data1[1])+($data3[1]*$data2[1])+($data3[2]*$data3[1])+($data3[3]*$data4[1]);
       $data7[] = ($data3[0]*$data1[2])+($data3[1]*$data2[2])+($data3[2]*$data3[2])+($data3[3]*$data4[2]);
       $data7[] = ($data3[0]*$data1[3])+($data3[1]*$data2[3])+($data3[2]*$data3[3])+($data3[3]*$data4[3]);
-
       $data8 = array();
       $data8[] = ($data4[0]*$data1[0])+($data4[1]*$data2[0])+($data4[2]*$data3[0])+($data4[3]*$data4[0]);
       $data8[] = ($data4[0]*$data1[1])+($data4[1]*$data2[1])+($data4[2]*$data3[1])+($data4[3]*$data4[1]);
       $data8[] = ($data4[0]*$data1[2])+($data4[1]*$data2[2])+($data4[2]*$data3[2])+($data4[3]*$data4[2]);
       $data8[] = ($data4[0]*$data1[3])+($data4[1]*$data2[3])+($data4[3]*$data3[2])+($data4[3]*$data4[3]);
-  
-      // menjumlahkan nilai setiap matriks iterasi pertama
       $totaldata1 = $data5[0]+$data5[1]+$data5[2]+$data5[3];
       $totaldata2 = $data6[0]+$data6[1]+$data6[2]+$data6[3];
       $totaldata3 = $data7[0]+$data7[1]+$data7[2]+$data7[3];
       $totaldata4 = $data8[0]+$data8[1]+$data8[2]+$data8[3];
       $sumtotal = $totaldata1+$totaldata2+$totaldata3+$totaldata4;
-
-      // hasil normalisasi iterasi pertama
       $eigenvector1 = $totaldata1/$sumtotal;
       $eigenvector2 = $totaldata2/$sumtotal;
       $eigenvector3 = $totaldata3/$sumtotal;
       $eigenvector4 = $totaldata4/$sumtotal;
-      // Total eigenvector, total haruslah 1
       $totaleigenvector1 = $eigenvector1+$eigenvector2+$eigenvector3+$eigenvector4;
-
-      // perkalian matriks iterasi ke 2
       $data9 = array();
       $data9[] = ($data5[0]*$data5[0])+($data5[1]*$data6[0])+($data5[2]*$data7[0])+($data5[3]*$data8[0]);
       $data9[] = ($data5[0]*$data5[1])+($data5[1]*$data6[1])+($data5[2]*$data7[1])+($data5[3]*$data8[1]);
       $data9[] = ($data5[0]*$data5[2])+($data5[1]*$data6[2])+($data5[2]*$data7[2])+($data5[3]*$data8[2]);
       $data9[] = ($data5[0]*$data5[3])+($data5[1]*$data6[3])+($data5[2]*$data7[3])+($data5[3]*$data8[3]);
-
       $data10 = array();
       $data10[] = ($data6[0]*$data5[0])+($data6[1]*$data6[0])+($data6[2]*$data7[0])+($data6[3]*$data8[0]);
       $data10[] = ($data6[0]*$data5[1])+($data6[1]*$data6[1])+($data6[2]*$data7[1])+($data6[3]*$data8[1]);
       $data10[] = ($data6[0]*$data5[2])+($data6[1]*$data6[2])+($data6[2]*$data7[2])+($data6[3]*$data8[2]);
       $data10[] = ($data6[0]*$data5[3])+($data6[1]*$data6[3])+($data6[2]*$data7[3])+($data6[3]*$data8[3]);
-
       $data11 = array();
       $data11[] = ($data7[0]*$data5[0])+($data7[1]*$data6[0])+($data7[2]*$data7[0])+($data7[3]*$data8[0]);
       $data11[] = ($data7[0]*$data5[1])+($data7[1]*$data6[1])+($data7[2]*$data7[1])+($data7[3]*$data8[1]);
       $data11[] = ($data7[0]*$data5[2])+($data7[1]*$data6[2])+($data7[2]*$data7[2])+($data7[3]*$data8[2]);
       $data11[] = ($data7[0]*$data5[3])+($data7[1]*$data6[3])+($data7[2]*$data7[3])+($data7[3]*$data8[3]);
-
       $data12 = array();
       $data12[] = ($data8[0]*$data5[0])+($data8[1]*$data6[0])+($data8[2]*$data7[0])+($data8[3]*$data8[0]);
       $data12[] = ($data8[0]*$data5[1])+($data8[1]*$data6[1])+($data8[2]*$data7[1])+($data8[3]*$data8[1]);
       $data12[] = ($data8[0]*$data5[2])+($data8[1]*$data6[2])+($data8[2]*$data7[2])+($data8[3]*$data8[2]);
       $data12[] = ($data8[0]*$data5[3])+($data8[1]*$data6[3])+($data8[2]*$data7[3])+($data8[3]*$data8[3]);
-
-      // menjumlahkan nilai setiap matriks iterasi kedua
       $totaldata5 = $data9[0]+$data9[1]+$data9[2]+$data9[3];
       $totaldata6 = $data10[0]+$data10[1]+$data10[2]+$data10[3];
       $totaldata7 = $data11[0]+$data10[1]+$data11[2]+$data11[3];
       $totaldata8 = $data12[0]+$data10[1]+$data12[2]+$data12[3];
       $sumtotal2 = $totaldata5+$totaldata6+$totaldata7+$totaldata8;
-      
-      // hasil normalisasi iterasi kedua
       $eigenvector5 = $totaldata5/$sumtotal2;
       $eigenvector6 = $totaldata6/$sumtotal2;
       $eigenvector7 = $totaldata7/$sumtotal2;
       $eigenvector8 = $totaldata8/$sumtotal2;
-      // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector5+$eigenvector6+$eigenvector7+$eigenvector8;
-
-      // hasil nilai persentase dan nominal pengeluaran 
       $persentase1 = $eigenvector5*100;
       $pengeluaran1 = ($persentase1*$total)/100;
       $persentase2 = $eigenvector6*100;
@@ -165,8 +123,6 @@ class Ahp extends CI_Model
       $pengeluaran3 = ($persentase3*$total)/100;
       $persentase4 = $eigenvector8*100;
       $pengeluaran4 = ($persentase4*$total)/100;
-
-      // inputan ke database
       $this->inputdata->inputhasil($id_keu,$eigenvector5,$persentase1,29,1,$pengeluaran1);
       $this->inputdata->inputhasil($id_keu,$eigenvector5,$persentase1,1,4,$pengeluaran1);
       $this->subkriteriabb($id_keu,$pengeluaran2);
@@ -175,65 +131,41 @@ class Ahp extends CI_Model
       $this->inputdata->inputhasil($id_keu,$eigenvector7,$persentase3,31,1,$pengeluaran3);
       $this->inputdata->inputhasil($id_keu,$eigenvector8,$persentase4,32,1,$pengeluaran4);
       $this->inputdata->inputhasil($id_keu,$eigenvector1,$persentase1,28,5,$pengeluaran4);
-
-      // perbedaan eigenvector, jika perubahan yang terjadi kecil maka nilai eigenvector 1 telah tepat.
       $hasil1 = $eigenvector5-$eigenvector1;
       $hasil2 = $eigenvector6-$eigenvector2;
       $hasil3 = $eigenvector7-$eigenvector3;
       $hasil4 = $eigenvector8-$eigenvector4;
-
-      // nilai eigen yang akan digunakan
-      // $dataeigenvector[0]=$eigenvector5; 
-      // $dataeigenvector[1]=$eigenvector6; 
-      // $dataeigenvector[2]=$eigenvector7;
-      // $dataeigenvector[3]=$eigenvector8;
-
-      // Melakukan perkalian matrik dari hasil data yang didapt dengan nilai eigen.
       $vektorsum1 = array();
       $vektorsum1[] = $eigenvector5*$data1[0];
       $vektorsum1[] = $eigenvector6*$data1[1];
       $vektorsum1[] = $eigenvector7*$data1[2];
       $vektorsum1[] = $eigenvector8*$data1[3];
-
       $vektorsum2 = array();
       $vektorsum2[] = $eigenvector5*$data2[0];
       $vektorsum2[] = $eigenvector6*$data2[1];
       $vektorsum2[] = $eigenvector7*$data2[2];
       $vektorsum2[] = $eigenvector8*$data2[3];
-
       $vektorsum3 = array();
       $vektorsum3[] = $eigenvector5*$data3[0];
       $vektorsum3[] = $eigenvector6*$data3[1];
       $vektorsum3[] = $eigenvector7*$data3[2];
       $vektorsum3[] = $eigenvector8*$data3[3];
-
       $vektorsum4 = array();
       $vektorsum4[] = $eigenvector5*$data4[0];
       $vektorsum4[] = $eigenvector6*$data4[1];
       $vektorsum4[] = $eigenvector7*$data4[2];
       $vektorsum4[] = $eigenvector8*$data4[3];
-
-      // Penjumlahan dari masing-masing hasil perkalian matrik dengan nilai eigen
       $jumlahvektorsum1 = $vektorsum1[0]+$vektorsum1[1]+$vektorsum1[2]+$vektorsum1[3];
       $jumlahvektorsum2 = $vektorsum2[0]+$vektorsum2[1]+$vektorsum2[2]+$vektorsum2[3];
       $jumlahvektorsum3 = $vektorsum3[0]+$vektorsum3[1]+$vektorsum3[2]+$vektorsum3[3];
       $jumlahvektorsum4 = $vektorsum4[0]+$vektorsum4[1]+$vektorsum4[2]+$vektorsum4[3];
-
-      // penjumlahan ini kemudian dibagi dengan nilai prioritas menyeluruh,
       $vk1 = $jumlahvektorsum1/$eigenvector5;
       $vk2 = $jumlahvektorsum2/$eigenvector6;
       $vk3 = $jumlahvektorsum3/$eigenvector7;
       $vk4 = $jumlahvektorsum4/$eigenvector8;
-
-      // nilai lamda maks
       $lamda              = ($vk1+$vk2+$vk3+$vk4)/$n;
-
-      // menghitung indeks Konsistensi
       $indekskonsistensi  = ($lamda - $n)/($n-1);
-
       $ir = $this->ahp->indeksrandom($n);
-
-      // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
       if ($persenrasiokonsistensi <= 10) {
@@ -243,10 +175,8 @@ class Ahp extends CI_Model
         $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
-
     function subkriteriabpr($id,$pengeluaranbpr)
     {
-        // get data dari database
         $id = $id-1;
         $data_detail = $this->getdata->getDataBy($id);
           $value = array();
@@ -255,104 +185,59 @@ class Ahp extends CI_Model
           }
         $n = 2;
         $id_keu = $id+1;
-        // get data dengan tipe pengeluaran
         $databpr1 = $value[25];
         $databpr2 = $value[26];
-
         $data1 = array();
         $data2 = array();
-
-        // pembobotan elemen-elemen pada setiap level dan hierarki
         $data1[] = $databpr1/$databpr1;
         $data1[] = $databpr1/$databpr2;
-
         $data2[] = $databpr2/$databpr1;
         $data2[] = $databpr2/$databpr2;
-
-      // perkalian matriks iterasi pertama
       $data5 = array();
       $data5[] = ($data1[0]*$data1[0])+($data1[1]*$data2[0]);
       $data5[] = ($data1[0]*$data1[1])+($data1[1]*$data2[1]);
-
       $data6 = array();
       $data6[] = ($data2[0]*$data1[0])+($data2[1]*$data2[0]);
       $data6[] = ($data2[0]*$data1[1])+($data2[1]*$data2[1]);
-
-      // menjumlahkan nilai setiap matriks iterasi pertama
       $totaldata1 = $data5[0]+$data5[1];
       $totaldata2 = $data6[0]+$data6[1];
       $sumtotal = $totaldata1+$totaldata2;
-
-      // hasil normalisasi iterasi pertama
       $eigenvector1 = $totaldata1/$sumtotal;
       $eigenvector2 = $totaldata2/$sumtotal;
-
-      // Total eigenvector, total haruslah 1
       $totaleigenvector1 = $eigenvector1+$eigenvector2;  
-
-      // perkalian matriks iterasi ke 2    
       $data9 = array();
       $data9[] = ($data5[0]*$data5[0])+($data5[1]*$data6[0]);
       $data9[] = ($data5[0]*$data5[1])+($data5[1]*$data6[1]);
-
       $data10 = array();
       $data10[] = ($data6[0]*$data5[0])+($data6[1]*$data6[0]);
       $data10[] = ($data6[0]*$data5[1])+($data6[1]*$data6[1]);
-
-      // menjumlahkan nilai setiap matriks iterasi kedua
       $totaldata5 = $data9[0]+$data9[1];
       $totaldata6 = $data10[0]+$data10[1];
       $sumtotal2 = $totaldata5+$totaldata6;
-      
-      // hasil normalisasi iterasi kedua
       $eigenvector5 = $totaldata5/$sumtotal2;
       $eigenvector6 = $totaldata6/$sumtotal2;
-      // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector5+$eigenvector6;
-
-      // hasil nilai persentase dan nominal pengeluaran 
       $persentase1 = $eigenvector5*100;
       $pengeluaran1 = ($persentase1*$pengeluaranbpr)/100;
       $persentase2 = $eigenvector6*100;
       $pengeluaran2 = ($persentase2*$pengeluaranbpr)/100;
-
-      // inputan ke database
       $this->inputdata->inputhasil($id_keu,$eigenvector5,$persentase1,26,3, $pengeluaran1);
       $this->inputdata->inputhasil($id_keu,$eigenvector6,$persentase2,27,3,$pengeluaran2);
-      
-      // // perbedaan eigenvector, jika perubahan yang terjadi kecil maka nilai eigenvector 1 telah tepat.
       $hasil1 = $eigenvector5-$eigenvector1;
       $hasil2 = $eigenvector6-$eigenvector2;
-
-      // $dataeigenvector[0]=$eigenvector5; 
-      // $dataeigenvector[1]=$eigenvector6; 
-
-      // Melakukan perkalian matrik dari hasil data yang didapt dengan nilai eigen.
       $vektorsum1 = array();
       $vektorsum1[] = $eigenvector5*$data1[0];
       $vektorsum1[] = $eigenvector6*$data1[1];
-
       $vektorsum2 = array();
       $vektorsum2[] = $eigenvector5*$data2[0];
       $vektorsum2[] = $eigenvector6*$data2[1];
-
-      // Penjumlahan dari masing-masing hasil perkalian matrik dengan nilai eigen
       $jumlahvektorsum1 = $vektorsum1[0]+$vektorsum1[1];
       $jumlahvektorsum2 = $vektorsum2[0]+$vektorsum2[1];
-
-      // penjumlahan ini kemudian dibagi dengan nilai prioritas menyeluruh,
       $vk1 = $jumlahvektorsum1/$eigenvector5;
       $vk2 = $jumlahvektorsum2/$eigenvector6;
-
-      // nilai lamda maks
       $lamda = ($vk1+$vk2)/$n;
-
-      // menghitung indeks Konsistensi
       $indekskonsistensi = ($lamda - $n)/($n-1);
-      
       $ir = $this->ahp->indeksrandom($n);
-
-      // menghitung konsistensi rasio
       $rasiokonsistensi = $indekskonsistensi/$ir;
       $persenrasiokonsistensi = $rasiokonsistensi*100;
       if ($persenrasiokonsistensi <= 10) {
@@ -365,7 +250,6 @@ class Ahp extends CI_Model
 
     public function subkriteriabb($id,$pengeluaranbb)
     {
-      // get data dari database
       $id = $id-1;
       $data_detail = $this->getdata->getDataBy($id);
           $value = array();
@@ -375,8 +259,6 @@ class Ahp extends CI_Model
       $n = 7;
       $id_keu = $id+1;
        $row = $this->getdata->getDataBy($id);
-
-       // get data dengan tipe pengeluaran
         $databb1 = $value[1]+$value[2]+$value[3]+$value[4];
         $databb2 = $value[5]+$value[6];
         $databb3 = $value[7]+$value[8];
@@ -384,7 +266,6 @@ class Ahp extends CI_Model
         $databb5 = $value[17]+$value[18]+$value[19]+$value[20]+$value[21];
         $databb6 = $value[22]+$value[23];
         $databb7 = $value[24];
-
        $data1 = array();
        $data2 = array();
        $data3 = array();
@@ -392,8 +273,6 @@ class Ahp extends CI_Model
        $data5 = array();
        $data6 = array();
        $data7 = array();
-
-      // pembobotan elemen-elemen pada setiap level dan hierarki
       $data1[] = $databb1/$databb1;
       $data1[] = $databb1/$databb2;
       $data1[] = $databb1/$databb3;
@@ -401,7 +280,6 @@ class Ahp extends CI_Model
       $data1[] = $databb1/$databb5;
       $data1[] = $databb1/$databb6;
       $data1[] = $databb1/$databb7;
-
       $data2[] = $databb2/$databb1;
       $data2[] = $databb2/$databb2;
       $data2[] = $databb2/$databb3;
@@ -409,7 +287,6 @@ class Ahp extends CI_Model
       $data2[] = $databb2/$databb5;
       $data2[] = $databb2/$databb6;
       $data2[] = $databb2/$databb7;
-
       $data3[] = $databb3/$databb1;
       $data3[] = $databb3/$databb2;
       $data3[] = $databb3/$databb3;
@@ -417,7 +294,6 @@ class Ahp extends CI_Model
       $data3[] = $databb3/$databb5;
       $data3[] = $databb3/$databb6;
       $data3[] = $databb3/$databb7;
-
       $data4[] = $databb4/$databb1;
       $data4[] = $databb4/$databb2;
       $data4[] = $databb4/$databb3;
@@ -425,7 +301,6 @@ class Ahp extends CI_Model
       $data4[] = $databb4/$databb5;
       $data4[] = $databb4/$databb6;
       $data4[] = $databb4/$databb7;
-
       $data5[] = $databb5/$databb1;
       $data5[] = $databb5/$databb2;
       $data5[] = $databb5/$databb3;
@@ -433,7 +308,6 @@ class Ahp extends CI_Model
       $data5[] = $databb5/$databb5;
       $data5[] = $databb5/$databb6;
       $data5[] = $databb5/$databb7;
-
       $data6[] = $databb6/$databb1;
       $data6[] = $databb6/$databb2;
       $data6[] = $databb6/$databb3;
@@ -441,7 +315,6 @@ class Ahp extends CI_Model
       $data6[] = $databb6/$databb5;
       $data6[] = $databb6/$databb6;
       $data6[] = $databb6/$databb7;
-
       $data7[] = $databb7/$databb1;
       $data7[] = $databb7/$databb2;
       $data7[] = $databb7/$databb3;
@@ -449,8 +322,6 @@ class Ahp extends CI_Model
       $data7[] = $databb7/$databb5;
       $data7[] = $databb7/$databb6;
       $data7[] = $databb7/$databb7;
-      
-      // perkalian matriks iterasi pertama
       $data8 = array();
       $data8[] = ($data1[0]*$data1[0])+($data1[1]*$data2[0])+($data1[2]*$data3[0])+($data1[3]*$data4[0])+($data1[4]*$data5[0])+($data1[5]*$data6[0])+($data1[6]*$data7[0]);
       $data8[] = ($data1[0]*$data1[1])+($data1[1]*$data2[1])+($data1[2]*$data3[1])+($data1[3]*$data4[1])+($data1[4]*$data5[1])+($data1[5]*$data6[1])+($data1[6]*$data7[1]);
@@ -459,7 +330,6 @@ class Ahp extends CI_Model
       $data8[] = ($data1[0]*$data1[4])+($data1[1]*$data2[4])+($data1[2]*$data3[4])+($data1[3]*$data4[4])+($data1[4]*$data5[4])+($data1[5]*$data6[4])+($data1[6]*$data7[4]);
       $data8[] = ($data1[0]*$data1[5])+($data1[1]*$data2[5])+($data1[2]*$data3[5])+($data1[3]*$data4[5])+($data1[4]*$data5[5])+($data1[5]*$data6[5])+($data1[6]*$data7[5]);
       $data8[] = ($data1[0]*$data1[6])+($data1[1]*$data2[6])+($data1[2]*$data3[6])+($data1[3]*$data4[6])+($data1[4]*$data5[6])+($data1[5]*$data6[6])+($data1[6]*$data7[6]);
-
       $data9 = array();
       $data9[] = ($data2[0]*$data1[0])+($data2[1]*$data2[0])+($data2[2]*$data3[0])+($data2[3]*$data4[0])+($data2[4]*$data5[0])+($data2[5]*$data6[0])+($data2[6]*$data7[0]);
       $data9[] = ($data2[0]*$data1[1])+($data2[1]*$data2[1])+($data2[2]*$data3[1])+($data2[3]*$data4[1])+($data2[4]*$data5[1])+($data2[5]*$data6[1])+($data2[6]*$data7[1]);

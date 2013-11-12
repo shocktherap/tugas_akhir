@@ -26,7 +26,7 @@
                       <table class="table">
                         <tr>
                           <td><label>Total Biaya Pengeluaran Semua Kriteria</label></td>
-                          <td><span class="add-on">Rp. </span><input type=text name="total" value="<?=$total;?>" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                          <td><span class="add-on">Rp. </span><input type=text name="total" value="<?=$total;?>" placeholder="something…" ></input><span class="add-on"></span></td>
                         </tr>
                         <?php
                         $a= 0;
@@ -50,14 +50,14 @@
                           }
                           ?>
                           <td><span class="add-on"></span><input type=text class="input-mini" name="hitung<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalc<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                          <td><span class="add-on">Rp. </span><input type=text name="hasil<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                          <td><span class="add-on">Rp. </span><input type=text name="hasil<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                         </tr>
                         	<?php
                         }?>
                         <tr class="well">                        
                           <td><label>Total Persentase</label></td>
                           <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentasetotal" value="" placeholder=""></input><span class="add-on"> %</span></td>
-                          <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hitungjumlahtotal" value=""></input><span class="add-on">,00</td>
+                          <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hitungjumlahtotal" value=""></input><span class="add-on"></td>
                         </tr>
                         </table>
                     </div>
@@ -75,7 +75,7 @@
                       <table class="table">
                         <tr>
                           <td><label>Total Biaya Pengeluaran</label></td>
-                          <td><span class="add-on">Rp. </span><input type=text name="totalbb" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                          <td><span class="add-on">Rp. </span><input type=text name="totalbb" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                         </tr>
                         <?php
                         $a= 7;
@@ -86,14 +86,14 @@
                         	<?php $a = $a +1;?>
                           <td><label><?=$data_nama->nama;?></label></td>
                           <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalbb<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalc<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                          <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalbb<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>"></input><span class="add-on">,00</td>
+                          <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalbb<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>"></input><span class="add-on"></td>
                         </tr>
                         	<?php
                         }?>
                         <tr class="well">                        
                           <td><label>Total Persentase</label></td>
                           <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentasebb" value="" placeholder="" onBlur="stopCalcBB();"></input><span class="add-on"> %</span></td>
-                          <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahbb" value="" ></input><span class="add-on">,00</td>
+                          <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahbb" value="" ></input><span class="add-on"></td>
                         </tr>
                         </table>
 
@@ -108,7 +108,7 @@
                                 <table class="table">
                                   <tr>
                                     <td><label>Total Biaya Pengeluaran</label></td>
-                                    <td><span class="add-on">Rp. </span><input type=text name="totalatk" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                                    <td><span class="add-on">Rp. </span><input type=text name="totalatk" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                                   </tr>
                                   <?php
                                   $a= 0;
@@ -119,14 +119,14 @@
                                     <?php $a = $a +1;?>
                                     <td><label><?=$data_nama->nama;?></label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalatk<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onClickon="startCalcATKPersen();" onBlur="stopCalcatk<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input class=" uneditable-input" type=text name="hasilhitungtotalatk<?=$a;?>" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input class=" uneditable-input" type=text name="hasilhitungtotalatk<?=$a;?>" value="" ></input><span class="add-on"></td>
                                   </tr>
                                     <?php
                                   }?>
                                   <tr class="well">                        
                                     <td><label>Total Persentase</label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentaseatk" value="" placeholder="" onBlur="stopCalcatk();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hitungjumlahatk" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hitungjumlahatk" value="" ></input><span class="add-on"></td>
                                   </tr>
                                   </table>
                               </div>
@@ -144,7 +144,7 @@
                                 <table class="table">
                                   <tr>
                                     <td><label>Total Biaya Pengeluaran</label></td>
-                                    <td><span class="add-on">Rp. </span><input type=text name="totalbhp" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                                    <td><span class="add-on">Rp. </span><input type=text name="totalbhp" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                                   </tr>
                                   <?php
                                   $a= 0;
@@ -155,14 +155,14 @@
                                     <?php $a = $a +1;?>
                                     <td><label><?=$data_nama->nama;?></label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalbhp<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalcbhp<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalbhp<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalbhp<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                                   </tr>
                                     <?php
                                   }?>
                                   <tr class="well">                        
                                     <td><label>Total Persentase</label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentasebhp" value="" placeholder="" onBlur="stopCalcbhp();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahbhp" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahbhp" value="" ></input><span class="add-on"></td>
                                   </tr>
                                   </table>
                               </div>
@@ -180,7 +180,7 @@
                                 <table class="table">
                                   <tr>
                                     <td><label>Total Biaya Pengeluaran</label></td>
-                                    <td><span class="add-on">Rp. </span><input type=text name="totalldj" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                                    <td><span class="add-on">Rp. </span><input type=text name="totalldj" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                                   </tr>
                                   <?php
                                   $a= 0;
@@ -191,14 +191,14 @@
                                     <?php $a = $a +1;?>
                                     <td><label><?=$data_nama->nama;?></label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalldj<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalcldj<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hasilhitungtotalldj<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hasilhitungtotalldj<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                                   </tr>
                                     <?php
                                   }?>
                                   <tr class="well">                        
                                     <td><label>Total Persentase</label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentaseldj" value="" placeholder="" onBlur="stopCalcldj();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahldj" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahldj" value="" ></input><span class="add-on"></td>
                                   </tr>
                                   </table>
                               </div>
@@ -216,7 +216,7 @@
                                 <table class="table">
                                   <tr>
                                     <td><label>Total Biaya Pengeluaran</label></td>
-                                    <td><span class="add-on">Rp. </span><input type=text name="totalkbm" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                                    <td><span class="add-on">Rp. </span><input type=text name="totalkbm" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                                   </tr>
                                   <?php
                                   $a= 0;
@@ -227,14 +227,14 @@
                                     <?php $a = $a +1;?>
                                     <td><label><?=$data_nama->nama;?></label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalkbm<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalckbm<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hasilhitungtotalkbm<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hasilhitungtotalkbm<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                                   </tr>
                                     <?php
                                   }?>
                                   <tr class="well">                        
                                     <td><label>Total Persentase</label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentasekbm" value="" placeholder="" onBlur="stopCalckbm();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahkbm" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahkbm" value="" ></input><span class="add-on"></td>
                                   </tr>
                                   </table>
                               </div>
@@ -251,7 +251,7 @@
                                 <table class="table">
                                   <tr>
                                     <td><label>Total Biaya Pengeluaran</label></td>
-                                    <td><span class="add-on">Rp. </span><input type=text name="totalks" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                                    <td><span class="add-on">Rp. </span><input type=text name="totalks" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                                   </tr>
                                   <?php
                                   $a= 0;
@@ -262,14 +262,14 @@
                                     <?php $a = $a +1;?>
                                     <td><label><?=$data_nama->nama;?></label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalks<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalcks<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hasilhitungtotalks<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hasilhitungtotalks<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                                   </tr>
                                     <?php
                                   }?>
                                   <tr class="well">                        
                                     <td><label>Total Persentase</label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentaseks" value="" placeholder="" onBlur="stopCalcks();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input class="uneditable-input" type=text name="hitungjumlahks" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input class="uneditable-input" type=text name="hitungjumlahks" value="" ></input><span class="add-on"></td>
                                   </tr>
                                   </table>
                               </div>
@@ -286,7 +286,7 @@
                                 <table class="table">
                                   <tr>
                                     <td><label>Total Biaya Pengeluaran</label></td>
-                                    <td><span class="add-on">Rp. </span><input type=text name="totalpp" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                                    <td><span class="add-on">Rp. </span><input type=text name="totalpp" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                                   </tr>
                                   <?php
                                   $a= 0;
@@ -297,14 +297,14 @@
                                     <?php $a = $a +1;?>
                                     <td><label><?=$data_nama->nama;?></label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalpp<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalcpp<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalpp<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalpp<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                                   </tr>
                                     <?php
                                   }?>
                                   <tr class="well">                        
                                     <td><label>Total Persentase</label></td>
                                     <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentasepp" value="" placeholder="" onBlur="stopCalcpp();"></input><span class="add-on"> %</span></td>
-                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hitungjumlahpp" value="" ></input><span class="add-on">,00</td>
+                                    <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hitungjumlahpp" value="" ></input><span class="add-on"></td>
                                   </tr>
                                   </table>
                               </div>
@@ -326,7 +326,7 @@
                       <table class="table">
                         <tr>
                           <td><label>Total Biaya Pengeluaran</label></td>
-                          <td><span class="add-on">Rp. </span><input type=text name="totalbpr" value="" placeholder="something…" ></input><span class="add-on">,00</span></td>
+                          <td><span class="add-on">Rp. </span><input type=text name="totalbpr" value="" placeholder="something…" ></input><span class="add-on"></span></td>
                         </tr>
                         <?php
                         $a= 5;
@@ -337,14 +337,14 @@
                         	<?php $a = $a +1;?>
                           <td><label><?=$data_nama->nama;?></label></td>
                           <td><span class="add-on"></span><input type=text class="input-mini" name="hitungtotalbpr<?=$a;?>" value="<?=$key['persentase2'];?>" placeholder="" onBlur="stopCalc<?=$a;?>();"></input><span class="add-on"> %</span></td>
-                          <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalbpr<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on">,00</td>
+                          <td><span class="add-on">Rp. </span><input type=text class=" uneditable-input" name="hasilhitungtotalbpr<?=$a;?>" value="<?php echo set_value('hasil'.$a);?>" ></input><span class="add-on"></td>
                         </tr>
                         	<?php
                         }?>
                         <tr class="well">                        
                           <td><label>Total Persentase</label></td>
                           <td><span class="add-on"></span><input type=text class="input-mini uneditable-input" name="hitungpersentasebpr" value="" placeholder="" onBlur="stopCalcBPR();"></input><span class="add-on"> %</span></td>
-                          <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahbpr" value="" ></input><span class="add-on">,00</td>
+                          <td><span class="add-on">Rp. </span><input type=text class="uneditable-input" name="hitungjumlahbpr" value="" ></input><span class="add-on"></td>
                         </tr>
                         </table>
                     </div>

@@ -294,8 +294,8 @@
                     document.entry.hasilhitungtotalkbm7.value = (eight / 100)*one;
                     document.entry.hasilhitungtotalkbm8.value = (nine / 100)*one;
 
-                    document.entry.hitungpersentasekbm.value = (two*1)+(three*1)+(four*1)+(five*1)+(six*1)+(seven*1)+(eight*1)+(seven*1);
-                    document.entry.hitungjumlahkbm.value = (((two/100)+(three/100)+(four/100)+(five/100)+(six/100)+(seven/100)+(eight/100)+(seven/100))*one);
+                    document.entry.hitungpersentasekbm.value = (two*1)+(three*1)+(four*1)+(five*1)+(six*1)+(seven*1)+(eight*1)+(nine*1);
+                    document.entry.hitungjumlahkbm.value = (((two/100)+(three/100)+(four/100)+(five/100)+(six/100)+(seven/100)+(eight/100)+(nine/100))*one);
                     
                   }
                   function stopCalckbm1(){

@@ -46,13 +46,16 @@ if ($status == 1) {
 		if ($hasil != null) {
 		?>
 		<h4 class="well">Total Pengeluaran : Rp <?php echo $jumlah = number_format($hasil['jumlah'],2,",",".");?></h4>
-    
+    <?php $stats = $this->getdata->getahpstatus($id);
+    if ($stats->ahp == 1) {
+    ?>  
     <div class="alert alert-block">
       <button type="button" class="close" data-dismiss="alert">×</button>
       <h4>Peringatan!</h4>
       <p>Perhitungan AHP belum efektif.</p>
     </div>    
 		<?php
+  }
 		$data = $hasil['data'];
 		?>
             <h3>Pengeluaran Kriteria Utama</h3>

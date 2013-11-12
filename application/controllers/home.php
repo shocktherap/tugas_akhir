@@ -4,7 +4,6 @@
 */
 class Home extends CI_Controller
 {
-	
 	function __construct()
 	{
 		parent::__construct();
@@ -14,66 +13,64 @@ class Home extends CI_Controller
 		$this->load->model('getdata');
 		session_start();
 	}
-// input data ahp
-	public function inputbul()
-	{
-		for ($x=1; $x < 6; $x++) {
-			if ($x == 1) {
-				for ($i=1; $i < 13; $i++) { 
-					for ($j=2012; $j < 2018; $j++) {
-					 	for ($z=29; $z < 33; $z++) { 
-							$this->inputdata->inputbul($i,$j,1,$z);
-							// echo "data ".$i.$j." was created";
-						}
-					}
-				}
-			} elseif ($x == 2) {
-				for ($i=1; $i < 13; $i++) { 
-					for ($j=2012; $j < 2018; $j++) {
-					 	for ($z=33; $z < 40; $z++) { 
-							$this->inputdata->inputbul($i,$j,2,$z);
-							// echo "data ".$i.$j." was created";
-						}
-					}
-				}
-				for ($i=1; $i < 13; $i++) { 
-					for ($j=2012; $j < 2018; $j++) {
-					 	for ($z=2; $z < 26; $z++) { 
-							$this->inputdata->inputbul($i,$j,2,$z);
-							// echo "data ".$i.$j." was created";
-						}
-					}
-				}
-			} elseif ($x == 3) {
-				for ($i=1; $i < 13; $i++) { 
-					for ($j=2012; $j < 2018; $j++) {
-					 	for ($z=26; $z < 28; $z++) { 
-							$this->inputdata->inputbul($i,$j,3,$z);
-							// echo "data ".$i.$j." was created";
-						}
-					}
-				}
-			} elseif ($x == 4) {
-				for ($i=1; $i < 13; $i++) { 
-					for ($j=2012; $j < 2018; $j++) {
-						$z = 1;
-							$this->inputdata->inputbul($i,$j,4,$z);
-							// echo "data ".$i.$j." was created";
-					}
-				}
-			} elseif ($x == 5) {
-				for ($i=1; $i < 13; $i++) { 
-					for ($j=2012; $j < 2018; $j++) {
-						$z = 28;
-							$this->inputdata->inputbul($i,$j,5,$z);
-							// echo "data ".$i.$j." was created";
-					}
-				}
-			}
-		}
-		echo "done";
-	}
-
+	// public function inputbul()
+	// {
+	// 	for ($x=1; $x < 6; $x++) {
+	// 		if ($x == 1) {
+	// 			for ($i=1; $i < 13; $i++) { 
+	// 				for ($j=2012; $j < 2018; $j++) {
+	// 				 	for ($z=29; $z < 33; $z++) { 
+	// 						$this->inputdata->inputbul($i,$j,1,$z);
+	// 						// echo "data ".$i.$j." was created";
+	// 					}
+	// 				}
+	// 			}
+	// 		} elseif ($x == 2) {
+	// 			for ($i=1; $i < 13; $i++) { 
+	// 				for ($j=2012; $j < 2018; $j++) {
+	// 				 	for ($z=33; $z < 40; $z++) { 
+	// 						$this->inputdata->inputbul($i,$j,2,$z);
+	// 						// echo "data ".$i.$j." was created";
+	// 					}
+	// 				}
+	// 			}
+	// 			for ($i=1; $i < 13; $i++) { 
+	// 				for ($j=2012; $j < 2018; $j++) {
+	// 				 	for ($z=2; $z < 26; $z++) { 
+	// 						$this->inputdata->inputbul($i,$j,2,$z);
+	// 						// echo "data ".$i.$j." was created";
+	// 					}
+	// 				}
+	// 			}
+	// 		} elseif ($x == 3) {
+	// 			for ($i=1; $i < 13; $i++) { 
+	// 				for ($j=2012; $j < 2018; $j++) {
+	// 				 	for ($z=26; $z < 28; $z++) { 
+	// 						$this->inputdata->inputbul($i,$j,3,$z);
+	// 						// echo "data ".$i.$j." was created";
+	// 					}
+	// 				}
+	// 			}
+	// 		} elseif ($x == 4) {
+	// 			for ($i=1; $i < 13; $i++) { 
+	// 				for ($j=2012; $j < 2018; $j++) {
+	// 					$z = 1;
+	// 						$this->inputdata->inputbul($i,$j,4,$z);
+	// 						// echo "data ".$i.$j." was created";
+	// 				}
+	// 			}
+	// 		} elseif ($x == 5) {
+	// 			for ($i=1; $i < 13; $i++) { 
+	// 				for ($j=2012; $j < 2018; $j++) {
+	// 					$z = 28;
+	// 						$this->inputdata->inputbul($i,$j,5,$z);
+	// 						// echo "data ".$i.$j." was created";
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	echo "done";
+	// }
 	public function inputdatakeuangan()
 	{
 		for ($i=1; $i < 13; $i++) { 
@@ -103,7 +100,6 @@ class Home extends CI_Controller
 		$data['content'] = "home/index";
 		$this->load->view('template',$data);
 	}
-
 	public function bulan($bulan)
 	{
 		$this->general->checksess();
@@ -115,14 +111,12 @@ class Home extends CI_Controller
 			 redirect('home/warning');
 		}
 	}
-
 	public function entrydata()
 	{
 		$this->general->checksess();
 		$data['content'] = "home/entrydata";
 		$this->load->view('template', $data);
 	}
-
 	public function entry($bulan, $tahun)
 	{
 		$this->general->checksess();
@@ -135,21 +129,18 @@ class Home extends CI_Controller
         $this->general->informationSuccess($info);
 		redirect('home/bulan/'.$bulan);		
 	}
-
 	public function viewdetail()
 	{
 		$this->general->checksess();
 		$data['content'] = "home/viewdetail";
 		$this->load->view('template', $data);	
 	}
-
 	public function updatedata()
 	{
 		$this->general->checksess();
 		$data['content'] = "home/updatedata";
 		$this->load->view('template', $data);
 	}
-
 	public function update($bulan, $tahun)
 	{
 		$this->general->checksess();
@@ -162,7 +153,6 @@ class Home extends CI_Controller
         $this->general->informationSuccess($info);
 		redirect('home/bulan/'.$bulan);		
 	}
-
 	public function cleardata($bulan, $tahun)
 	{
 		$id = $bulan.$tahun;
@@ -177,7 +167,6 @@ class Home extends CI_Controller
         $this->general->informationSuccess($info);
 		redirect('home/bulan/'.$bulan);
 	}
-
 	public function sistem($bulan,$tahun)
 	{
 		$id = $bulan.$tahun;
@@ -198,6 +187,7 @@ class Home extends CI_Controller
             $total  = $jumlah_siswa*$satuan;
         	  $data['hasil'] = array('jumlah' => $total, 'data' => array('pertama' => 'pertama','kedua' => 'kedua'));
         	  $this->ahp->kriteriautama($id,$total);
+            $this->inputdata->updatestatustotal($id, $total);
             $dataahp2 = $this->getdata->getahp2($id);
             $datakriteria = array();
             foreach ($dataahp2 as $key) {
@@ -212,14 +202,12 @@ class Home extends CI_Controller
             $this->load->view('template',$data);
 		}
 	}
-
 	public function help()
 	{
 		$this->general->checksess();
 		$data['content'] = "home/help";
 		$this->load->view('template', $data);
 	}
-
 	public function printdetail($bulan, $tahun)
 	{
 		$id = $bulan.$tahun;
@@ -240,7 +228,6 @@ class Home extends CI_Controller
 		$this->load->helper('pdf');
         $this->load->library('cezpdf');
         prep_pdf();
-
         $db_data[] = array('no' => '1.1', 'category' => 'Honorarium Guru dan Tenaga Kependidikan Honorer', 'output' => 'Rp. '.$value[0] = number_format($value[0],2,",","."));
         $db_data[] = array('no' => '2.1', 'category' => 'Alat Tulis Kantor', 'output' => 'Rp. '.$value[1] = number_format($value[1],2,",","."));
         $db_data[] = array('no' => '2.1.1', 'category' => 'Papan Data', 'output' => 'Rp. '.$value[2] = number_format($value[2],2,",","."));
@@ -283,7 +270,6 @@ class Home extends CI_Controller
         $this->cezpdf->ezTable($db_data,$col_names,'Data Pengeluaran bulan '.$print->nama_bulan.' tahun '.$tahun,array('width'=>550,'showHeading'=> 0));
         $this->cezpdf->ezStream();
 	}
-
 	public function printoutput($bulan, $tahun)
 	{
 		$this->general->checksess(); 
@@ -291,38 +277,35 @@ class Home extends CI_Controller
 		$print = $this->getdata->getnamabulan($bulan);
 		$data1 = $this->getdata->getprint($bulan.$tahun);
 		$data= $this->getdata->getprintkriteria($bulan.$tahun);
-		
 		$this->load->helper('pdf');
-        $this->load->library('cezpdf');
-        prep_pdf();
-        $a = 0;
-        foreach ($data as $key) {
-        	$namapengeluaran = $this->getdata->getnamapengeluaran($key['id_pengeluaran']);
-        	$db_data[] = array('Nomor' => $a= $a+1, 'category' =>  $namapengeluaran->nama, 'output' => 'Rp. '.$key['pengeluaran']);	
-        }        
-       
-        $col_names = array(
-            'Nomor' => 'Nomor',
-            'category' => 'Uraian',
-            'output' => 'Jumlah',
-        );
-        $a = 0;
-        foreach ($data1 as $key) {
-        	$namapengeluaran = $this->getdata->getnamapengeluaran($key['id_pengeluaran']);
-        	$db_data1[] = array('Nomor' => $a= $a+1, 'category' =>  $namapengeluaran->nama, 'output' => 'Rp. '.$key['pengeluaran']);	
-        }        
-       
-        $col_names1 = array(
-            'Nomor' => 'Nomor',
-            'category' => 'Uraian',
-            'output' => 'Jumlah',
-        );
-        $this->cezpdf->ezTable($db_data,$col_names,'Kriteria Utama '.$print->nama_bulan.' '.$tahun,array('width'=>10,'showHeading'=> 0));
-        $this->cezpdf->addText(150,800,15,"Rencana Anggaran Pendapatan dan Belanja Sekolah");
-        $this->cezpdf->ezTable($db_data1,$col_names1,'Subkriteria '.$print->nama_bulan.' '.$tahun,array('width'=>550,'showHeading'=> 0));
-        $this->cezpdf->ezStream();
+    $this->load->library('cezpdf');
+    prep_pdf();
+    $a = 0;
+    foreach ($data as $key) {
+    	$namapengeluaran = $this->getdata->getnamapengeluaran($key['id_pengeluaran']);
+    	$db_data[] = array('Nomor' => $a= $a+1, 'category' =>  $namapengeluaran->nama, 'output' => 'Rp. '.$key['pengeluaran']);	
+    }        
+    $col_names = array(
+        'Nomor' => 'Nomor',
+        'category' => 'Uraian',
+        'output' => 'Jumlah',
+    );
+    $a = 0;
+    foreach ($data1 as $key) {
+    	$namapengeluaran = $this->getdata->getnamapengeluaran($key['id_pengeluaran']);
+    	$db_data1[] = array('Nomor' => $a= $a+1, 'category' =>  $namapengeluaran->nama, 'output' => 'Rp. '.$key['pengeluaran']);	
+    }        
+   
+    $col_names1 = array(
+        'Nomor' => 'Nomor',
+        'category' => 'Uraian',
+        'output' => 'Jumlah',
+    );
+    $this->cezpdf->ezTable($db_data,$col_names,'Kriteria Utama '.$print->nama_bulan.' '.$tahun,array('width'=>10,'showHeading'=> 0));
+    $this->cezpdf->addText(150,800,15,"Rencana Anggaran Pendapatan dan Belanja Sekolah");
+    $this->cezpdf->ezTable($db_data1,$col_names1,'Subkriteria '.$print->nama_bulan.' '.$tahun,array('width'=>550,'showHeading'=> 0));
+    $this->cezpdf->ezStream();
 	}
-
 	public function printoutput2($bulan, $tahun)
 	{
 		$this->general->checksess(); 
@@ -330,8 +313,6 @@ class Home extends CI_Controller
 		$print = $this->getdata->getnamabulan($bulan);
 		$data = $this->getdata->getprintkriteriarencana($bulan.$tahun);
 		$data1 = $this->getdata->getprintrencana($bulan.$tahun);
-		
-		
 		$this->load->helper('pdf');
         $this->load->library('cezpdf');
         prep_pdf();
@@ -362,18 +343,16 @@ class Home extends CI_Controller
         $this->cezpdf->ezTable($db_data1,$col_names1,'Subkriteria '.$print->nama_bulan.' '.$tahun,array('width'=>550,'showHeading'=> 0));
         $this->cezpdf->ezStream();
 	}
-
 	public function gantipass()
 	{
 		$this->general->checksess();
 		$data['content'] = "home/gantipass";
-		$this->load->library('form_validation');
-        $this->form_validation->set_rules('password', 'Password Baru', 'required|matches[confpassword]');
-        $this->form_validation->set_rules('confpassword', 'Confirm Password Baru', 'required');
-        $this->form_validation->set_rules('oldpassword', 'Password Lama', 'required');
-        $this->form_validation->set_message('required', '%s Harap Diisi');
-        $this->form_validation->set_message('matches', 'Password baru dan confirm password baru tidak sama');
-
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('password', 'Password Baru', 'required|matches[confpassword]');
+    $this->form_validation->set_rules('confpassword', 'Confirm Password Baru', 'required');
+    $this->form_validation->set_rules('oldpassword', 'Password Lama', 'required');
+    $this->form_validation->set_message('required', '%s Harap Diisi');
+    $this->form_validation->set_message('matches', 'Password baru dan confirm password baru tidak sama');
         if ($this->form_validation->run() == FALSE) {
 			$this->load->view('template', $data);
         } else { 
@@ -387,44 +366,38 @@ class Home extends CI_Controller
 		        $this->general->information($info);
 				redirect('home/gantipass');   	
         	}
-        	
 		}
 	}
-
 	public function warning()
 	{
 		$this->load->view('administrator/warning');
 	}
-
-	function logout() {
+	public function logout() {
         	$this->general->checksess();
             $this->session->unset_userdata('login');
             $this->session->sess_destroy();
             session_destroy();
             redirect('login', 'refresh');
     }
-
-    public function admin()
+  public function admin()
     {
     	$this->general->authadmin();
 		$data['content'] = "home/index";
 		$this->load->view('template',$data);
     }
 
-    public function user2()
+  public function user2()
     {
     	$this->general->authuser2();
 		$data['content'] = "home/index";
 		$this->load->view('template',$data);
     }
-
-    public function resetpass()
+  public function resetpass()
 	{
 		$this->general->authuser2();
 		$data['content'] = "administrator/resetpass";
 		$this->load->view('template',$data);	
 	}
-
 	public function reset($id)
 	{
 		$this->general->authuser2();
@@ -433,12 +406,10 @@ class Home extends CI_Controller
         $this->general->informationSuccess($info);
 		redirect('home/resetpass');
 	}
-
 	public function peringatan()
 	{
 		$this->load->view('administrator/warning');
 	}
-
 	public function updaterencana($bulan, $tahun, $jumlah)
 	{
 		$data['total'] = $jumlah;
@@ -461,7 +432,6 @@ class Home extends CI_Controller
         $this->general->informationSuccess($info);
 		redirect('home/bulan/'.$bulan);
 	}
-
 	public function updaterencana2($bulan, $tahun)
 	{
 		$data['id'] = $bulan.$tahun;
@@ -470,7 +440,6 @@ class Home extends CI_Controller
 		$data['content'] = "home/updaterencana2";
 		$this->load->view('template', $data);	
 	}
-
 	public function buatrencana($bulan, $tahun)
 	{
 		$data['id'] = $bulan.$tahun;
@@ -479,7 +448,6 @@ class Home extends CI_Controller
 		$data['content'] = "home/buatrencana";
 		$this->load->view('template', $data);	
 	}
-
 	public function lihatrencana($bulan, $tahun)
 	{
 		$data['id'] = $bulan.$tahun;
@@ -501,7 +469,6 @@ class Home extends CI_Controller
 		}
 		redirect('home/lihatrencana/'.$bulan.'/'.$tahun);
 	}
-
 	public function jikaterjadilupapasswordpadaadminmakainiharusdilakukan()
 	{
 		$this->inputdata->resetuser(1);
@@ -512,8 +479,4 @@ class Home extends CI_Controller
 		redirect('login');
 	}
 }
-
-
-/* End of file home.php */
-/* Location: ./application/controllers/home.php */
 ?>

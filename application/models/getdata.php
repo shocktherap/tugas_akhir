@@ -350,7 +350,13 @@ class Getdata extends CI_Model
 		$query = $this->db->get('data_keuangan');
 		return $query->row();
 	}
-
+	public function getahpstatus($id)
+	{
+		$this->db->select('ahp');
+		$this->db->where('id', $id);
+		$query = $this->db->get('data_keuangan');
+		return $query->row();
+	}
 }
 
 /* End of file getData_model.php */
