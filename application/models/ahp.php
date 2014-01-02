@@ -28,35 +28,35 @@ class Ahp extends CI_Model
   public function to_ten($number)
   {
     if ($number > 0 && $number <=10 ) {
-      echo round($number, 1, PHP_ROUND_HALF_UP);
+      return round($number, 1, PHP_ROUND_HALF_UP);
     } elseif($number > 10 && $number < 100) {
-      echo round($number*0.1, 1, PHP_ROUND_HALF_UP);
+      return round($number*0.1, 1, PHP_ROUND_HALF_UP);
     } elseif($number > 100 && $number < 1000) {
-      echo round($number*0.01, 1, PHP_ROUND_HALF_UP);
+      return round($number*0.01, 1, PHP_ROUND_HALF_UP);
     } elseif($number > 1000 && $number < 10000) {
-      echo round($number*0.001, 1, PHP_ROUND_HALF_UP);
+      return round($number*0.001, 1, PHP_ROUND_HALF_UP);
     } elseif($number > 10000 && $number < 100000) {
-      echo round($number*0.0001, 1, PHP_ROUND_HALF_UP);
+      return round($number*0.0001, 1, PHP_ROUND_HALF_UP);
     } elseif($number > 100000 && $number < 1000000) {
-      echo round($number*0.00001, 1, PHP_ROUND_HALF_UP);
+      return round($number*0.00001, 1, PHP_ROUND_HALF_UP);
     } elseif($number > 1000000 && $number < 10000000) {
-      echo round($number*0.000001, 1, PHP_ROUND_HALF_UP);
+      return round($number*0.000001, 1, PHP_ROUND_HALF_UP);
     } elseif($number < 0 && $number> 0.1) {
-      echo round($number*10, 1, PHP_ROUND_HALF_UP);
+      return round($number*10, 1, PHP_ROUND_HALF_UP);
     } elseif($number < 0.1 && $number> 0.01) {
-      echo round($number*100, 1, PHP_ROUND_HALF_UP);
+      return round($number*100, 1, PHP_ROUND_HALF_UP);
     } elseif($number < 0.01 && $number> 0.001) {
-      echo round($number*1000, 1, PHP_ROUND_HALF_UP);
+      return round($number*1000, 1, PHP_ROUND_HALF_UP);
     } elseif($number < 0.001 && $number> 0.0001) {
-      echo round($number*10000, 1, PHP_ROUND_HALF_UP);
+      return round($number*10000, 1, PHP_ROUND_HALF_UP);
     } elseif($number < 0.0001 && $number> 0.00001) {
-      echo round($number*100000, 1, PHP_ROUND_HALF_UP);
+      return round($number*100000, 1, PHP_ROUND_HALF_UP);
     } elseif($number < 0.00001 && $number> 0.000001) {
-      echo round($number*1000000, 1, PHP_ROUND_HALF_UP);    
+      return round($number*1000000, 1, PHP_ROUND_HALF_UP);    
     } elseif($number < 0.000001 && $number> 0.0000001) {
-      echo round($number*10000000, 1, PHP_ROUND_HALF_UP);
+      return round($number*10000000, 1, PHP_ROUND_HALF_UP);
     } elseif($number == 0){
-      echo 0;
+      return 0;
     }
   }
   public function kriteriautama($id,$total)
@@ -73,22 +73,22 @@ class Ahp extends CI_Model
       $data2 = array();
       $data3 = array();
       $data4 = array();
-      $data1[] = $datatotal1/$datatotal1;
-      $data1[] = $datatotal1/$datatotal2;
-      $data1[] = $datatotal1/$datatotal3;
-      $data1[] = $datatotal1/$datatotal4;
-      $data2[] = $datatotal2/$datatotal1;
-      $data2[] = $datatotal2/$datatotal2;
-      $data2[] = $datatotal2/$datatotal3;
-      $data2[] = $datatotal2/$datatotal4;
-      $data3[] = $datatotal3/$datatotal1;
-      $data3[] = $datatotal3/$datatotal2;
-      $data3[] = $datatotal3/$datatotal3;
-      $data3[] = $datatotal3/$datatotal4;
-      $data4[] = $datatotal4/$datatotal1;
-      $data4[] = $datatotal4/$datatotal2;
-      $data4[] = $datatotal4/$datatotal3;
-      $data4[] = $datatotal4/$datatotal4;
+      $data1[] = $this->to_ten($datatotal1/$datatotal1);
+      $data1[] = $this->to_ten($datatotal1/$datatotal2);
+      $data1[] = $this->to_ten($datatotal1/$datatotal3);
+      $data1[] = $this->to_ten($datatotal1/$datatotal4);
+      $data2[] = $this->to_ten($datatotal2/$datatotal1);
+      $data2[] = $this->to_ten($datatotal2/$datatotal2);
+      $data2[] = $this->to_ten($datatotal2/$datatotal3);
+      $data2[] = $this->to_ten($datatotal2/$datatotal4);
+      $data3[] = $this->to_ten($datatotal3/$datatotal1);
+      $data3[] = $this->to_ten($datatotal3/$datatotal2);
+      $data3[] = $this->to_ten($datatotal3/$datatotal3);
+      $data3[] = $this->to_ten($datatotal3/$datatotal4);
+      $data4[] = $this->to_ten($datatotal4/$datatotal1);
+      $data4[] = $this->to_ten($datatotal4/$datatotal2);
+      $data4[] = $this->to_ten($datatotal4/$datatotal3);
+      $data4[] = $this->to_ten($datatotal4/$datatotal4);
       $data5 = array();
       $data5[] = ($data1[0]*$data1[0])+($data1[1]*$data2[0])+($data1[2]*$data3[0])+($data1[3]*$data4[0]);
       $data5[] = ($data1[0]*$data1[1])+($data1[1]*$data2[1])+($data1[2]*$data3[1])+($data1[3]*$data4[1]);
@@ -144,10 +144,10 @@ class Ahp extends CI_Model
       $totaldata7 = $data11[0]+$data10[1]+$data11[2]+$data11[3];
       $totaldata8 = $data12[0]+$data10[1]+$data12[2]+$data12[3];
       $sumtotal2 = $totaldata5+$totaldata6+$totaldata7+$totaldata8;
-      $eigenvector5 = $totaldata5/$sumtotal2;
-      $eigenvector6 = $totaldata6/$sumtotal2;
-      $eigenvector7 = $totaldata7/$sumtotal2;
-      $eigenvector8 = $totaldata8/$sumtotal2;
+      $eigenvector5 = round($totaldata5/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector6 = round($totaldata6/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector7 = round($totaldata7/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector8 = round($totaldata8/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       $totaleigenvector2 = $eigenvector5+$eigenvector6+$eigenvector7+$eigenvector8;
       $persentase1 = $eigenvector5*100;
       $pengeluaran1 = ($persentase1*$total)/100;
@@ -223,10 +223,10 @@ class Ahp extends CI_Model
         $databpr2 = $value[26];
         $data1 = array();
         $data2 = array();
-        $data1[] = $databpr1/$databpr1;
-        $data1[] = $databpr1/$databpr2;
-        $data2[] = $databpr2/$databpr1;
-        $data2[] = $databpr2/$databpr2;
+        $data1[] = $this->to_ten($databpr1/$databpr1);
+        $data1[] = $this->to_ten($databpr1/$databpr2);
+        $data2[] = $this->to_ten($databpr2/$databpr1);
+        $data2[] = $this->to_ten($databpr2/$databpr2);
       $data5 = array();
       $data5[] = ($data1[0]*$data1[0])+($data1[1]*$data2[0]);
       $data5[] = ($data1[0]*$data1[1])+($data1[1]*$data2[1]);
@@ -248,8 +248,8 @@ class Ahp extends CI_Model
       $totaldata5 = $data9[0]+$data9[1];
       $totaldata6 = $data10[0]+$data10[1];
       $sumtotal2 = $totaldata5+$totaldata6;
-      $eigenvector5 = $totaldata5/$sumtotal2;
-      $eigenvector6 = $totaldata6/$sumtotal2;
+      $eigenvector5 = round($totaldata5/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector6 = round($totaldata6/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       $totaleigenvector2 = $eigenvector5+$eigenvector6;
       $persentase1 = $eigenvector5*100;
       $pengeluaran1 = ($persentase1*$pengeluaranbpr)/100;
@@ -307,55 +307,55 @@ class Ahp extends CI_Model
        $data5 = array();
        $data6 = array();
        $data7 = array();
-      $data1[] = $databb1/$databb1;
-      $data1[] = $databb1/$databb2;
-      $data1[] = $databb1/$databb3;
-      $data1[] = $databb1/$databb4;
-      $data1[] = $databb1/$databb5;
-      $data1[] = $databb1/$databb6;
-      $data1[] = $databb1/$databb7;
-      $data2[] = $databb2/$databb1;
-      $data2[] = $databb2/$databb2;
-      $data2[] = $databb2/$databb3;
-      $data2[] = $databb2/$databb4;
-      $data2[] = $databb2/$databb5;
-      $data2[] = $databb2/$databb6;
-      $data2[] = $databb2/$databb7;
-      $data3[] = $databb3/$databb1;
-      $data3[] = $databb3/$databb2;
-      $data3[] = $databb3/$databb3;
-      $data3[] = $databb3/$databb4;
-      $data3[] = $databb3/$databb5;
-      $data3[] = $databb3/$databb6;
-      $data3[] = $databb3/$databb7;
-      $data4[] = $databb4/$databb1;
-      $data4[] = $databb4/$databb2;
-      $data4[] = $databb4/$databb3;
-      $data4[] = $databb4/$databb4;
-      $data4[] = $databb4/$databb5;
-      $data4[] = $databb4/$databb6;
-      $data4[] = $databb4/$databb7;
-      $data5[] = $databb5/$databb1;
-      $data5[] = $databb5/$databb2;
-      $data5[] = $databb5/$databb3;
-      $data5[] = $databb5/$databb4;
-      $data5[] = $databb5/$databb5;
-      $data5[] = $databb5/$databb6;
-      $data5[] = $databb5/$databb7;
-      $data6[] = $databb6/$databb1;
-      $data6[] = $databb6/$databb2;
-      $data6[] = $databb6/$databb3;
-      $data6[] = $databb6/$databb4;
-      $data6[] = $databb6/$databb5;
-      $data6[] = $databb6/$databb6;
-      $data6[] = $databb6/$databb7;
-      $data7[] = $databb7/$databb1;
-      $data7[] = $databb7/$databb2;
-      $data7[] = $databb7/$databb3;
-      $data7[] = $databb7/$databb4;
-      $data7[] = $databb7/$databb5;
-      $data7[] = $databb7/$databb6;
-      $data7[] = $databb7/$databb7;
+      $data1[] = $this->to_ten($databb1/$databb1);
+      $data1[] = $this->to_ten($databb1/$databb2);
+      $data1[] = $this->to_ten($databb1/$databb3);
+      $data1[] = $this->to_ten($databb1/$databb4);
+      $data1[] = $this->to_ten($databb1/$databb5);
+      $data1[] = $this->to_ten($databb1/$databb6);
+      $data1[] = $this->to_ten($databb1/$databb7);
+      $data2[] = $this->to_ten($databb2/$databb1);
+      $data2[] = $this->to_ten($databb2/$databb2);
+      $data2[] = $this->to_ten($databb2/$databb3);
+      $data2[] = $this->to_ten($databb2/$databb4);
+      $data2[] = $this->to_ten($databb2/$databb5);
+      $data2[] = $this->to_ten($databb2/$databb6);
+      $data2[] = $this->to_ten($databb2/$databb7);
+      $data3[] = $this->to_ten($databb3/$databb1);
+      $data3[] = $this->to_ten($databb3/$databb2);
+      $data3[] = $this->to_ten($databb3/$databb3);
+      $data3[] = $this->to_ten($databb3/$databb4);
+      $data3[] = $this->to_ten($databb3/$databb5);
+      $data3[] = $this->to_ten($databb3/$databb6);
+      $data3[] = $this->to_ten($databb3/$databb7);
+      $data4[] = $this->to_ten($databb4/$databb1);
+      $data4[] = $this->to_ten($databb4/$databb2);
+      $data4[] = $this->to_ten($databb4/$databb3);
+      $data4[] = $this->to_ten($databb4/$databb4);
+      $data4[] = $this->to_ten($databb4/$databb5);
+      $data4[] = $this->to_ten($databb4/$databb6);
+      $data4[] = $this->to_ten($databb4/$databb7);
+      $data5[] = $this->to_ten($databb5/$databb1);
+      $data5[] = $this->to_ten($databb5/$databb2);
+      $data5[] = $this->to_ten($databb5/$databb3);
+      $data5[] = $this->to_ten($databb5/$databb4);
+      $data5[] = $this->to_ten($databb5/$databb5);
+      $data5[] = $this->to_ten($databb5/$databb6);
+      $data5[] = $this->to_ten($databb5/$databb7);
+      $data6[] = $this->to_ten($databb6/$databb1);
+      $data6[] = $this->to_ten($databb6/$databb2);
+      $data6[] = $this->to_ten($databb6/$databb3);
+      $data6[] = $this->to_ten($databb6/$databb4);
+      $data6[] = $this->to_ten($databb6/$databb5);
+      $data6[] = $this->to_ten($databb6/$databb6);
+      $data6[] = $this->to_ten($databb6/$databb7);
+      $data7[] = $this->to_ten($databb7/$databb1);
+      $data7[] = $this->to_ten($databb7/$databb2);
+      $data7[] = $this->to_ten($databb7/$databb3);
+      $data7[] = $this->to_ten($databb7/$databb4);
+      $data7[] = $this->to_ten($databb7/$databb5);
+      $data7[] = $this->to_ten($databb7/$databb6);
+      $data7[] = $this->to_ten($databb7/$databb7);
       $data8 = array();
       $data8[] = ($data1[0]*$data1[0])+($data1[1]*$data2[0])+($data1[2]*$data3[0])+($data1[3]*$data4[0])+($data1[4]*$data5[0])+($data1[5]*$data6[0])+($data1[6]*$data7[0]);
       $data8[] = ($data1[0]*$data1[1])+($data1[1]*$data2[1])+($data1[2]*$data3[1])+($data1[3]*$data4[1])+($data1[4]*$data5[1])+($data1[5]*$data6[1])+($data1[6]*$data7[1]);
@@ -518,13 +518,13 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata8+$totaldata9+$totaldata10+$totaldata11+$totaldata12+$totaldata13+$totaldata14;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector8 = $totaldata8/$sumtotal2;
-      $eigenvector9 = $totaldata9/$sumtotal2;
-      $eigenvector10 = $totaldata10/$sumtotal2;
-      $eigenvector11 = $totaldata11/$sumtotal2;
-      $eigenvector12 = $totaldata12/$sumtotal2;
-      $eigenvector13 = $totaldata13/$sumtotal2;
-      $eigenvector14 = $totaldata14/$sumtotal2;
+      $eigenvector8 = round($totaldata8/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector9 = round($totaldata9/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector10 = round($totaldata10/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector11 = round($totaldata11/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector12 = round($totaldata12/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector13 = round($totaldata13/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector14 = round($totaldata14/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector8+$eigenvector9+$eigenvector10+$eigenvector11+$eigenvector12+$eigenvector13+$eigenvector14;
 
@@ -562,14 +562,6 @@ class Ahp extends CI_Model
       $hasil5 = $eigenvector12-$eigenvector5;
       $hasil6 = $eigenvector13-$eigenvector6;
       $hasil7 = $eigenvector14-$eigenvector7;
-
-      // $dataeigenvector[0]=$eigenvector1; 
-      // $dataeigenvector[1]=$eigenvector2; 
-      // $dataeigenvector[2]=$eigenvector3;
-      // $dataeigenvector[3]=$eigenvector4;
-      // $dataeigenvector[4]=$eigenvector5;
-      // $dataeigenvector[5]=$eigenvector6;
-      // $dataeigenvector[6]=$eigenvector7;
 
       // Melakukan perkalian matrik dari hasil data yang didapt dengan nilai eigen.
       $vektorsum1 = array();
@@ -692,11 +684,11 @@ class Ahp extends CI_Model
         $data2 = array();
 
         // pembobotan elemen-elemen pada setiap level dan hierarki
-        $data1[] = $datapp1/$datapp1;
-        $data1[] = $datapp1/$datapp2;
+        $data1[] = $this->to_ten($datapp1/$datapp1);
+        $data1[] = $this->to_ten($datapp1/$datapp2);
 
-        $data2[] = $datapp2/$datapp1;
-        $data2[] = $datapp2/$datapp2;
+        $data2[] = $this->to_ten($datapp2/$datapp1);
+        $data2[] = $this->to_ten($datapp2/$datapp2);
 
       // perkalian matriks iterasi pertama
       $data5 = array();
@@ -734,8 +726,8 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata5+$totaldata6;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector5 = $totaldata5/$sumtotal2;
-      $eigenvector6 = $totaldata6/$sumtotal2;
+      $eigenvector5 = round($totaldata5/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector6 = round($totaldata6/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector5+$eigenvector6;
 
@@ -814,11 +806,11 @@ class Ahp extends CI_Model
         $data2 = array();
 
         // pembobotan elemen-elemen pada setiap level dan hierarki
-        $data1[] = $databhp1/$databhp1;
-        $data1[] = $databhp1/$databhp2;
+        $data1[] = $this->to_ten($databhp1/$databhp1);
+        $data1[] = $this->to_ten($databhp1/$databhp2);
 
-        $data2[] = $databhp2/$databhp1;
-        $data2[] = $databhp2/$databhp2;
+        $data2[] = $this->to_ten($databhp2/$databhp1);
+        $data2[] = $this->to_ten($databhp2/$databhp2);
 
       // perkalian matriks iterasi pertama
       $data5 = array();
@@ -857,8 +849,8 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata5+$totaldata6;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector5 = $totaldata5/$sumtotal2;
-      $eigenvector6 = $totaldata6/$sumtotal2;
+      $eigenvector5 = round($totaldata5/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector6 = round($totaldata6/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector5+$eigenvector6;
       
@@ -936,11 +928,11 @@ class Ahp extends CI_Model
         $data2 = array();
         
         // pembobotan elemen-elemen pada setiap level dan hierarki
-        $data1[] = $dataldj1/$dataldj1;
-        $data1[] = $dataldj1/$dataldj2;
+        $data1[] = $this->to_ten($dataldj1/$dataldj1);
+        $data1[] = $this->to_ten($dataldj1/$dataldj2);
 
-        $data2[] = $dataldj2/$dataldj1;
-        $data2[] = $dataldj2/$dataldj2;
+        $data2[] = $this->to_ten($dataldj2/$dataldj1);
+        $data2[] = $this->to_ten($dataldj2/$dataldj2);
 
       // perkalian matriks iterasi pertama
       $data5 = array();
@@ -977,8 +969,8 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata5+$totaldata6;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector5 = $totaldata5/$sumtotal2;
-      $eigenvector6 = $totaldata6/$sumtotal2;
+      $eigenvector5 = round($totaldata5/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector6 = round($totaldata6/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector5+$eigenvector6;
 
@@ -1060,25 +1052,25 @@ class Ahp extends CI_Model
       $data4 = array();
 
       // pembobotan elemen-elemen pada setiap level dan hierarki
-      $data1[] = $datatotal1/$datatotal1;
-      $data1[] = $datatotal1/$datatotal2;
-      $data1[] = $datatotal1/$datatotal3;
-      $data1[] = $datatotal1/$datatotal4;
+      $data1[] = $this->to_ten($datatotal1/$datatotal1);
+      $data1[] = $this->to_ten($datatotal1/$datatotal2);
+      $data1[] = $this->to_ten($datatotal1/$datatotal3);
+      $data1[] = $this->to_ten($datatotal1/$datatotal4);
 
-      $data2[] = $datatotal2/$datatotal1;
-      $data2[] = $datatotal2/$datatotal2;
-      $data2[] = $datatotal2/$datatotal3;
-      $data2[] = $datatotal2/$datatotal4;
+      $data2[] = $this->to_ten($datatotal2/$datatotal1);
+      $data2[] = $this->to_ten($datatotal2/$datatotal2);
+      $data2[] = $this->to_ten($datatotal2/$datatotal3);
+      $data2[] = $this->to_ten($datatotal2/$datatotal4);
 
-      $data3[] = $datatotal3/$datatotal1;
-      $data3[] = $datatotal3/$datatotal2;
-      $data3[] = $datatotal3/$datatotal3;
-      $data3[] = $datatotal3/$datatotal4;
+      $data3[] = $this->to_ten($datatotal3/$datatotal1);
+      $data3[] = $this->to_ten($datatotal3/$datatotal2);
+      $data3[] = $this->to_ten($datatotal3/$datatotal3);
+      $data3[] = $this->to_ten($datatotal3/$datatotal4);
 
-      $data4[] = $datatotal4/$datatotal1;
-      $data4[] = $datatotal4/$datatotal2;
-      $data4[] = $datatotal4/$datatotal3;
-      $data4[] = $datatotal4/$datatotal4;
+      $data4[] = $this->to_ten($datatotal4/$datatotal1);
+      $data4[] = $this->to_ten($datatotal4/$datatotal2);
+      $data4[] = $this->to_ten($datatotal4/$datatotal3);
+      $data4[] = $this->to_ten($datatotal4/$datatotal4);
 
       // perkalian matriks iterasi pertama
       $data5 = array();
@@ -1154,10 +1146,10 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata5+$totaldata6+$totaldata7+$totaldata8;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector5 = $totaldata5/$sumtotal2;
-      $eigenvector6 = $totaldata6/$sumtotal2;
-      $eigenvector7 = $totaldata7/$sumtotal2;
-      $eigenvector8 = $totaldata8/$sumtotal2;
+      $eigenvector5 = round($totaldata5/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector6 = round($totaldata6/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector7 = round($totaldata7/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector8 = round($totaldata8/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector5+$eigenvector6+$eigenvector7+$eigenvector8;
       
@@ -1271,29 +1263,29 @@ class Ahp extends CI_Model
        $data5 = array();
 
       // pembobotan elemen-elemen pada setiap level dan hierarki
-      $data1[] = $datatotal1/$datatotal1;
-      $data1[] = $datatotal1/$datatotal2;
-      $data1[] = $datatotal1/$datatotal3;
-      $data1[] = $datatotal1/$datatotal4;
-      $data1[] = $datatotal1/$datatotal5;
+      $data1[] = $this->to_ten($datatotal1/$datatotal1);
+      $data1[] = $this->to_ten($datatotal1/$datatotal2);
+      $data1[] = $this->to_ten($datatotal1/$datatotal3);
+      $data1[] = $this->to_ten($datatotal1/$datatotal4);
+      $data1[] = $this->to_ten($datatotal1/$datatotal5);
 
-      $data2[] = $datatotal2/$datatotal1;
-      $data2[] = $datatotal2/$datatotal2;
-      $data2[] = $datatotal2/$datatotal3;
-      $data2[] = $datatotal2/$datatotal4;
-      $data2[] = $datatotal2/$datatotal5;
+      $data2[] = $this->to_ten($datatotal2/$datatotal1);
+      $data2[] = $this->to_ten($datatotal2/$datatotal2);
+      $data2[] = $this->to_ten($datatotal2/$datatotal3);
+      $data2[] = $this->to_ten($datatotal2/$datatotal4);
+      $data2[] = $this->to_ten($datatotal2/$datatotal5);
 
-      $data3[] = $datatotal3/$datatotal1;
-      $data3[] = $datatotal3/$datatotal2;
-      $data3[] = $datatotal3/$datatotal3;
-      $data3[] = $datatotal3/$datatotal4;
-      $data3[] = $datatotal3/$datatotal5;
+      $data3[] = $this->to_ten($datatotal3/$datatotal1);
+      $data3[] = $this->to_ten($datatotal3/$datatotal2);
+      $data3[] = $this->to_ten($datatotal3/$datatotal3);
+      $data3[] = $this->to_ten($datatotal3/$datatotal4);
+      $data3[] = $this->to_ten($datatotal3/$datatotal5);
 
-      $data4[] = $datatotal4/$datatotal1;
-      $data4[] = $datatotal4/$datatotal2;
-      $data4[] = $datatotal4/$datatotal3;
-      $data4[] = $datatotal4/$datatotal4;
-      $data4[] = $datatotal4/$datatotal5;
+      $data4[] = $this->to_ten($datatotal4/$datatotal1);
+      $data4[] = $this->to_ten($datatotal4/$datatotal2);
+      $data4[] = $this->to_ten($datatotal4/$datatotal3);
+      $data4[] = $this->to_ten($datatotal4/$datatotal4);
+      $data4[] = $this->to_ten($datatotal4/$datatotal5);
 
       $data5[] = $datatotal5/$datatotal1;
       $data5[] = $datatotal5/$datatotal2;
@@ -1402,11 +1394,11 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata8+$totaldata9+$totaldata10+$totaldata11+$totaldata12;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector8 = $totaldata8/$sumtotal2;
-      $eigenvector9 = $totaldata9/$sumtotal2;
-      $eigenvector10 = $totaldata10/$sumtotal2;
-      $eigenvector11 = $totaldata11/$sumtotal2;
-      $eigenvector12 = $totaldata12/$sumtotal2;
+      $eigenvector8 = round($totaldata8/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector9 = round($totaldata9/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector10 = round($totaldata10/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector11 = round($totaldata11/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector12 = round($totaldata12/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector8+$eigenvector9+$eigenvector10+$eigenvector11+$eigenvector12;
 
@@ -1544,41 +1536,41 @@ class Ahp extends CI_Model
        $data8 = array();
       
       // pembobotan elemen-elemen pada setiap level dan hierarki
-      $data1[] = $datakbm1/$datakbm1;
-      $data1[] = $datakbm1/$datakbm2;
-      $data1[] = $datakbm1/$datakbm3;
-      $data1[] = $datakbm1/$datakbm4;
-      $data1[] = $datakbm1/$datakbm5;
-      $data1[] = $datakbm1/$datakbm6;
-      $data1[] = $datakbm1/$datakbm7;
-      $data1[] = $datakbm1/$datakbm8;
+      $data1[] = $this->to_ten($datakbm1/$datakbm1);
+      $data1[] = $this->to_ten($datakbm1/$datakbm2);
+      $data1[] = $this->to_ten($datakbm1/$datakbm3);
+      $data1[] = $this->to_ten($datakbm1/$datakbm4);
+      $data1[] = $this->to_ten($datakbm1/$datakbm5);
+      $data1[] = $this->to_ten($datakbm1/$datakbm6);
+      $data1[] = $this->to_ten($datakbm1/$datakbm7);
+      $data1[] = $this->to_ten($datakbm1/$datakbm8);
 
-      $data2[] = $datakbm2/$datakbm1;
-      $data2[] = $datakbm2/$datakbm2;
-      $data2[] = $datakbm2/$datakbm3;
-      $data2[] = $datakbm2/$datakbm4;
-      $data2[] = $datakbm2/$datakbm5;
-      $data2[] = $datakbm2/$datakbm6;
-      $data2[] = $datakbm2/$datakbm7;
-      $data2[] = $datakbm2/$datakbm8;
+      $data2[] = $this->to_ten($datakbm2/$datakbm1);
+      $data2[] = $this->to_ten($datakbm2/$datakbm2);
+      $data2[] = $this->to_ten($datakbm2/$datakbm3);
+      $data2[] = $this->to_ten($datakbm2/$datakbm4);
+      $data2[] = $this->to_ten($datakbm2/$datakbm5);
+      $data2[] = $this->to_ten($datakbm2/$datakbm6);
+      $data2[] = $this->to_ten($datakbm2/$datakbm7);
+      $data2[] = $this->to_ten($datakbm2/$datakbm8);
 
-      $data3[] = $datakbm3/$datakbm1;
-      $data3[] = $datakbm3/$datakbm2;
-      $data3[] = $datakbm3/$datakbm3;
-      $data3[] = $datakbm3/$datakbm4;
-      $data3[] = $datakbm3/$datakbm5;
-      $data3[] = $datakbm3/$datakbm6;
-      $data3[] = $datakbm3/$datakbm7;
-      $data3[] = $datakbm3/$datakbm8;
+      $data3[] = $this->to_ten($datakbm3/$datakbm1);
+      $data3[] = $this->to_ten($datakbm3/$datakbm2);
+      $data3[] = $this->to_ten($datakbm3/$datakbm3);
+      $data3[] = $this->to_ten($datakbm3/$datakbm4);
+      $data3[] = $this->to_ten($datakbm3/$datakbm5);
+      $data3[] = $this->to_ten($datakbm3/$datakbm6);
+      $data3[] = $this->to_ten($datakbm3/$datakbm7);
+      $data3[] = $this->to_ten($datakbm3/$datakbm8);
 
-      $data4[] = $datakbm4/$datakbm1;
-      $data4[] = $datakbm4/$datakbm2;
-      $data4[] = $datakbm4/$datakbm3;
-      $data4[] = $datakbm4/$datakbm4;
-      $data4[] = $datakbm4/$datakbm5;
-      $data4[] = $datakbm4/$datakbm6;
-      $data4[] = $datakbm4/$datakbm7;
-      $data4[] = $datakbm4/$datakbm8;
+      $data4[] = $this->to_ten($datakbm4/$datakbm1);
+      $data4[] = $this->to_ten($datakbm4/$datakbm2);
+      $data4[] = $this->to_ten($datakbm4/$datakbm3);
+      $data4[] = $this->to_ten($datakbm4/$datakbm4);
+      $data4[] = $this->to_ten($datakbm4/$datakbm5);
+      $data4[] = $this->to_ten($datakbm4/$datakbm6);
+      $data4[] = $this->to_ten($datakbm4/$datakbm7);
+      $data4[] = $this->to_ten($datakbm4/$datakbm8);
 
       $data5[] = $datakbm5/$datakbm1;
       $data5[] = $datakbm5/$datakbm2;
@@ -1816,14 +1808,14 @@ class Ahp extends CI_Model
       $sumtotal2 = $totaldata9+$totaldata10+$totaldata11+$totaldata12+$totaldata13+$totaldata14+$totaldata15+$totaldata16;
       
       // hasil normalisasi iterasi kedua
-      $eigenvector9 = $totaldata9/$sumtotal2;
-      $eigenvector10 = $totaldata10/$sumtotal2;
-      $eigenvector11 = $totaldata11/$sumtotal2;
-      $eigenvector12 = $totaldata12/$sumtotal2;
-      $eigenvector13 = $totaldata13/$sumtotal2;
-      $eigenvector14 = $totaldata14/$sumtotal2;
-      $eigenvector15 = $totaldata15/$sumtotal2;
-      $eigenvector16 = $totaldata16/$sumtotal2;
+      $eigenvector9 = round($totaldata9/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector10 = round($totaldata10/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector11 = round($totaldata11/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector12 = round($totaldata12/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector13 = round($totaldata13/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector14 = round($totaldata14/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector15 = round($totaldata15/$sumtotal2, 2, PHP_ROUND_HALF_UP);
+      $eigenvector16 = round($totaldata16/$sumtotal2, 2, PHP_ROUND_HALF_UP);
       // Total eigenvector, total haruslah 1
       $totaleigenvector2 = $eigenvector9+$eigenvector10+$eigenvector11+$eigenvector12+$eigenvector13+$eigenvector14+$eigenvector15+$eigenvector16;
 
