@@ -25,6 +25,40 @@ class Ahp extends CI_Model
             return $ir = 1.41;
         }
     }
+  public function to_ten($number)
+  {
+    if ($number > 0 && $number <=10 ) {
+      echo round($number, 1, PHP_ROUND_HALF_UP);
+    } elseif($number > 10 && $number < 100) {
+      echo round($number*0.1, 1, PHP_ROUND_HALF_UP);
+    } elseif($number > 100 && $number < 1000) {
+      echo round($number*0.01, 1, PHP_ROUND_HALF_UP);
+    } elseif($number > 1000 && $number < 10000) {
+      echo round($number*0.001, 1, PHP_ROUND_HALF_UP);
+    } elseif($number > 10000 && $number < 100000) {
+      echo round($number*0.0001, 1, PHP_ROUND_HALF_UP);
+    } elseif($number > 100000 && $number < 1000000) {
+      echo round($number*0.00001, 1, PHP_ROUND_HALF_UP);
+    } elseif($number > 1000000 && $number < 10000000) {
+      echo round($number*0.000001, 1, PHP_ROUND_HALF_UP);
+    } elseif($number < 0 && $number> 0.1) {
+      echo round($number*10, 1, PHP_ROUND_HALF_UP);
+    } elseif($number < 0.1 && $number> 0.01) {
+      echo round($number*100, 1, PHP_ROUND_HALF_UP);
+    } elseif($number < 0.01 && $number> 0.001) {
+      echo round($number*1000, 1, PHP_ROUND_HALF_UP);
+    } elseif($number < 0.001 && $number> 0.0001) {
+      echo round($number*10000, 1, PHP_ROUND_HALF_UP);
+    } elseif($number < 0.0001 && $number> 0.00001) {
+      echo round($number*100000, 1, PHP_ROUND_HALF_UP);
+    } elseif($number < 0.00001 && $number> 0.000001) {
+      echo round($number*1000000, 1, PHP_ROUND_HALF_UP);    
+    } elseif($number < 0.000001 && $number> 0.0000001) {
+      echo round($number*10000000, 1, PHP_ROUND_HALF_UP);
+    } elseif($number == 0){
+      echo 0;
+    }
+  }
   public function kriteriautama($id,$total)
     {
       $id = $id-1;

@@ -13,6 +13,7 @@ class Home extends CI_Controller
 		$this->load->model('getdata');
 		session_start();
 	}
+  
 	// public function inputbul()
 	// {
 	// 	for ($x=1; $x < 6; $x++) {

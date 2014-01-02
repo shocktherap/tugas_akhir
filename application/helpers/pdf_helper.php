@@ -1,6 +1,6 @@
 <?php
 
-function prep_pdf($orientation = 'portrait')
+function prep_pdf($orientation = 'landscape')
 {
 	$CI = & get_instance();
 	
