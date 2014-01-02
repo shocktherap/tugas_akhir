@@ -72,6 +72,7 @@ class Home extends CI_Controller
 	// 	}
 	// 	echo "done";
 	// }
+  
 	public function inputdatakeuangan()
 	{
 		for ($i=1; $i < 13; $i++) { 

@@ -333,6 +333,22 @@ class Inputdata extends CI_Model
 		$this->db->where('id', $id);
 		$this->db->update('data_keuangan', $object);
 	}
+	public function input_check($id_data_keu, $prioritas)
+	{
+		$object = array(
+			'data_keu_id' => $id_data_keu,
+			'prioritas_id'=> $prioritas,
+			'value' => 0
+		 );
+		$this->db->insert('check', $object);
+	}
+	public function check_value($id_data_keu, $prioritas, $value)
+	{
+		$this->db->where('data_keu_id', $id_data_keu);
+		$this->db->where('prioritas_id', $prioritas);
+		$object = array('value' => $value);
+		$this->db->insert('check', $object);
+	}
 }
 /* End of file inputdata.php */
 /* Location: ./application/models/inputdata.php */

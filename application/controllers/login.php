@@ -11,8 +11,21 @@ class login extends CI_Controller
 		parent::__construct();
         $this->load->model('general');
         $this->load->model('getdata');
+        $this->load->model('inputdata');
 	}
+public function check()
+  {
 
+    for ($tahun=2012; $tahun < 2018; $tahun++) { 
+      for ($bulan=1; $bulan < 13; $bulan++) { 
+        for ($prioritas=1; $prioritas < 6; $prioritas++) { 
+          echo $data_keu_id = "$bulan$tahun";
+          $this->inputdata->input_check($data_keu_id, $prioritas);
+        }
+      }
+    }
+
+  }
 	public function index()
 	{
 

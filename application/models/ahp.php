@@ -206,7 +206,8 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
+        $this->inputdata->check_value($id_keu, 1, $ratio);
       }
     }
     function subkriteriabpr($id,$pengeluaranbpr)
@@ -278,7 +279,7 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
 
@@ -660,7 +661,8 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
+        $this->inputdata->check_value($id_keu, 2, $ratio);
       }
     }
     // fix
@@ -781,7 +783,7 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
 
@@ -904,7 +906,7 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
     // fix
@@ -1023,7 +1025,7 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
 
@@ -1232,7 +1234,7 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
     // fix
@@ -1499,7 +1501,7 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
       }
     }
 
@@ -1983,7 +1985,8 @@ class Ahp extends CI_Model
         $ratio = 0;
       } else {
         $ratio = 1;
-        $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->inputratio($id_keu, $ratio);
+        // $this->inputdata->check_value($id_data_keu, $prioritas, $value);
       }
     }
 }

@@ -2,6 +2,16 @@
 $row = $this->getdata->getrencanapengeluaran($id);
 $persetujuan = $this->getdata->getpersetujuan($id);
 $persentase = $this->getdata->getpersentasekriteriautama($id);
+$check = $this->getdata->getallcheck($id);
+foreach ($check as $key) {
+  if ($key->value == 1) {
+    $prioritasn = $this->getdata->getnamaprioritas($key->prioritas_id); ?>
+    <div class="alert">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Warning!</strong> <?=$prioritasn->nama_prioritas;?>, Tidak berjalan dengan baik
+    </div>
+  <?php }
+}
 $datapersen = array();
 foreach ($persentase as $key) {
   $datapersen[] = $key['persentase2'];

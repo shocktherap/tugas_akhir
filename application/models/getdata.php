@@ -357,6 +357,12 @@ class Getdata extends CI_Model
 		$query = $this->db->get('data_keuangan');
 		return $query->row();
 	}
+	public function getallcheck($id)
+	{
+		$this->db->where('data_keu_id', $id);
+		$query = $this->db->get('check');
+		return $query->result();
+	}
 }
 
 /* End of file getData_model.php */
